@@ -62,6 +62,7 @@ model Product {
   inventoryTransactions InventoryTransaction[]
   orderItems            OrderItem[]
   cartItems             CartItem[]
+  bundleItems           BundleItem[]
 }
 
 model ProductImage {
@@ -158,6 +159,33 @@ model CartItem {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model Bundle {
+  id          Int         @id @default(autoincrement())
+  name        String
+  slug        String      @unique
+  tagline     String      @default("")
+  description String      @default("")
+  price       Float       @default(0)
+  oldPrice    Float       @default(0)
+  image       String      @default("")
+  isActive    Boolean     @default(true)
+  isFeatured  Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  items BundleItem[]
+}
+
+model BundleItem {
+  id        Int   @id @default(autoincrement())
+  bundleId  Int
+  productId Int
+  quantity  Int   @default(1)
+
+  bundle  Bundle  @relation(fields: [bundleId], references: [id], onDelete: Cascade)
   product Product @relation(fields: [productId], references: [id])
 }
 

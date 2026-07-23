@@ -28,48 +28,28 @@ export default async function CategoryProductsPage({
 
   return (
     <div>
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gold transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link
-              href="/categories"
-              className="hover:text-gold transition-colors"
-            >
-              Categories
-            </Link>
-            <span>/</span>
-            <span className="text-gray-900 font-medium">{category.name}</span>
-          </nav>
-        </div>
+      <div className="breadcrumbs" style={{ padding: '8rem 1.5rem 0', maxWidth: 1280, margin: '0 auto' }}>
+        <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
+        <span style={{ color: 'var(--muted)' }}>/</span>
+        <Link href="/categories" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Categories</Link>
+        <span style={{ color: 'var(--muted)' }}>/</span>
+        <span className="current" style={{ color: 'var(--ink)', fontWeight: 600 }}>{category.name}</span>
       </div>
 
-      {/* Header */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/products/hero-spices.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">{category.name}</h1>
-          {category.description && (
-            <p className="mt-2 text-gray-300 max-w-2xl">
-              {category.description}
-            </p>
-          )}
-        </div>
+      <section className="shop-header" style={{ padding: '3rem 1.5rem 3rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.9))', color: 'var(--cream)', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>{category.name}</h1>
+        {category.description && (
+          <p style={{ opacity: .7, marginTop: '.75rem', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>{category.description}</p>
+        )}
       </section>
 
-      {/* Products */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <section style={{ maxWidth: 1280, margin: '0 auto', padding: '2rem 1.5rem 4rem' }}>
         {products.length > 0 ? (
           <>
-            <p className="text-sm text-gray-500 mb-6">
-              {products.length} product{products.length !== 1 ? "s" : ""} in this
-              category
+            <p style={{ fontSize: '.875rem', color: 'var(--muted)', marginBottom: '1.5rem' }}>
+              {products.length} product{products.length !== 1 ? 's' : ''} in this category
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="shop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem' }}>
               {products.map((product: any) => (
                 <ProductCard
                   key={product.id}
@@ -91,33 +71,10 @@ export default async function CategoryProductsPage({
             </div>
           </>
         ) : (
-          <div className="text-center py-16">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-16 w-16 text-gray-300 mx-auto mb-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-              />
-            </svg>
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">
-              No products in this category yet
-            </h3>
-            <p className="text-sm text-gray-500">
-              Check back soon for new additions.
-            </p>
-            <Link
-              href="/products"
-              className="mt-4 inline-block text-sm text-gold hover:text-gold-light font-medium"
-            >
-              Browse all products
-            </Link>
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '.5rem' }}>No products in this category yet</h3>
+            <p style={{ color: 'var(--muted)' }}>Check back soon for new additions.</p>
+            <Link href="/products" className="btn-primary" style={{ marginTop: '1rem', display: 'inline-flex' }}>Browse all products</Link>
           </div>
         )}
       </section>

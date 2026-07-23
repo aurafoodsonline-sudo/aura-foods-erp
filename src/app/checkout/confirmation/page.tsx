@@ -9,47 +9,22 @@ function ConfirmationContent() {
   const orderNumber = searchParams.get("order");
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-      <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10 text-gold"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
+    <div className="order-confirm" style={{ padding: '8rem 1.5rem 3rem', textAlign: 'center', maxWidth: 560, margin: '0 auto' }}>
+      <div className="checkmark" style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--olive)', display: 'grid', placeItems: 'center', margin: '0 auto 2rem', fontSize: '2.5rem', color: '#fff' }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        Order Placed Successfully!
-      </h1>
-      <p className="text-gray-500 mb-2">
+      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem' }}>Order Placed Successfully!</h1>
+      <p style={{ color: 'var(--muted)', marginTop: '.75rem', lineHeight: 1.7 }}>
         Thank you for your order. We&apos;ll process it shortly.
       </p>
       {orderNumber && (
-        <p className="text-lg font-semibold text-gold mb-8">
+        <p style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--gold)', marginTop: '1rem' }}>
           Order Number: {orderNumber}
         </p>
       )}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Link
-          href="/products"
-          className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold transition-all"
-        >
-          Continue Shopping
-        </Link>
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-gold px-8 py-3 rounded-lg font-semibold transition-all"
-        >
-          Back to Home
-        </Link>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '.75rem', marginTop: '2rem', alignItems: 'center' }}>
+        <Link href="/products" className="btn-primary" style={{ display: 'inline-flex' }}>Continue Shopping</Link>
+        <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '.875rem' }}>Back to Home</Link>
       </div>
     </div>
   );
@@ -57,21 +32,14 @@ function ConfirmationContent() {
 
 export default function ConfirmationPage() {
   return (
-    <div>
-      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Order Confirmation</h1>
+    <Suspense
+      fallback={
+        <div style={{ padding: '8rem 1.5rem 3rem', textAlign: 'center' }}>
+          <div style={{ width: 32, height: 32, border: '3px solid var(--border)', borderTopColor: 'var(--gold)', borderRadius: '50%', animation: 'spin .6s linear infinite', margin: '0 auto' }} />
         </div>
-      </section>
-      <Suspense
-        fallback={
-          <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-            <div className="animate-spin h-8 w-8 border-4 border-gray-700 border-t-gold rounded-full mx-auto" />
-          </div>
-        }
-      >
-        <ConfirmationContent />
-      </Suspense>
-    </div>
+      }
+    >
+      <ConfirmationContent />
+    </Suspense>
   );
 }

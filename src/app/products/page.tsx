@@ -34,149 +34,97 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     orderBy: { createdAt: "desc" },
   });
 
+  const activeCategory = categorySlug ? categories.find((c: any) => c.slug === categorySlug) : null;
+
   return (
     <div>
-      {/* Header */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/products/hero.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Our Products</h1>
-          <p className="mt-2 text-gray-300">
-            Discover our range of premium, organic spices.
-          </p>
-        </div>
+      {/* Shop Header */}
+      <section className="shop-header" style={{ padding: '8rem 1.5rem 3rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.9))', color: 'var(--cream)', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+          {categorySlug ? `${activeCategory?.name || categorySlug} Spices — Buy Online in Pakistan` : 'Organic Spice Collection — Buy Online in Pakistan'}
+        </h1>
+        <p style={{ opacity: .7, marginTop: '.75rem', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
+          {categorySlug ? `Browse our selection of premium ${categorySlug} spices. Hand-sourced, stone-ground, and delivered across Pakistan.` : 'Every spice tells a story of Pakistani heritage. Hand-sourced, stone-ground, and packed with pride.'}
+        </p>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar Filters */}
-          <aside className="lg:w-64 shrink-0">
-            <div className="bg-gray-900 rounded-lg border border-gray-800 p-5 sticky top-24">
-              <h3 className="font-semibold text-gray-100 mb-4">Categories</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/products"
-                      className={`block px-3 py-2 rounded-md text-sm transition-colors ${
-                        !categorySlug
-                          ? "bg-gold text-black"
-                          : "text-gray-400 hover:bg-gray-800"
-                      }`}
-                  >
-                    All Products
-                  </Link>
-                </li>
-                {categories.map((cat: any) => (
-                  <li key={cat.id}>
-                    <Link
-                      href={`/products?category=${cat.slug}`}
-                      className={`block px-3 py-2 rounded-md text-sm transition-colors ${
-                        categorySlug === cat.slug
-                          ? "bg-gold text-black"
-                          : "text-gray-400 hover:bg-gray-800"
-                      }`}
-                    >
-                      {cat.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+      <div className="shop-layout" style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '2rem', maxWidth: 1280, margin: '0 auto', padding: '2rem 1.5rem' }}>
+        {/* Sidebar */}
+        <aside className="shop-sidebar" style={{ padding: 0 }} aria-label="Filter by spice category">
+          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', marginBottom: '1rem' }}>Categories</h3>
+          <nav className="shop-categories" style={{ display: 'flex', flexDirection: 'column', gap: '.25rem' }}>
+            <Link
+              href="/products"
+              className={!categorySlug ? 'active' : ''}
+              style={{ display: 'block', padding: '.5rem .75rem', borderRadius: 8, textDecoration: 'none', fontSize: '.875rem', transition: 'all .2s', whiteSpace: 'nowrap', background: !categorySlug ? 'var(--gold)' : 'transparent', color: !categorySlug ? 'var(--ink)' : 'var(--muted)', fontWeight: !categorySlug ? 600 : 400 }}
+            >
+              All Products
+            </Link>
+            {categories.map((cat: any) => (
+              <Link
+                key={cat.id}
+                href={`/products?category=${cat.slug}`}
+                className={categorySlug === cat.slug ? 'active' : ''}
+                style={{ display: 'block', padding: '.5rem .75rem', borderRadius: 8, textDecoration: 'none', fontSize: '.875rem', transition: 'all .2s', whiteSpace: 'nowrap', background: categorySlug === cat.slug ? 'var(--gold)' : 'transparent', color: categorySlug === cat.slug ? 'var(--ink)' : 'var(--muted)', fontWeight: categorySlug === cat.slug ? 600 : 400 }}
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </nav>
+        </aside>
 
-          {/* Main Content */}
-          <div className="flex-1 min-w-0">
-            {/* Search & Info */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-              <p className="text-sm text-gray-500">
-                {products.length} product{products.length !== 1 ? "s" : ""} found
-                {categorySlug && (
-                  <>
-                    {" in "}
-                    <span className="font-medium text-gray-700">
-                      {categories.find((c: any) => c.slug === categorySlug)?.name}
-                    </span>
-                  </>
-                )}
-                {q && (
-                  <>
-                    {" for "}
-                    <span className="font-medium text-gray-700">&ldquo;{q}&rdquo;</span>
-                  </>
-                )}
-              </p>
-              <form method="GET" action="/products" className="flex w-full sm:w-auto">
-                <div className="relative flex-1 sm:flex-initial">
-                  <input
-                    type="text"
-                    name="q"
-                    defaultValue={q || ""}
-                    placeholder="Search products..."
-                    className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  />
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </form>
-            </div>
-
-            {/* Product Grid */}
-            {products.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {products.map((product: any) => (
-                  <ProductCard
-                    key={product.id}
-                    product={{
-                      id: product.id,
-                      name: product.name,
-                      slug: product.slug,
-                      price: product.price,
-                      oldPrice: product.oldPrice || null,
-                      weight: product.weight || null,
-                      tagline: product.tagline || null,
-                      images: product.images.map((img: any) => ({
-                        url: img.url,
-                        alt: img.alt,
-                      })),
-                    }}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16 text-gray-300 mx-auto mb-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        {/* Main Content */}
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+            <p style={{ fontSize: '.875rem', color: 'var(--muted)' }}>
+              {products.length} product{products.length !== 1 ? 's' : ''} found
+              {activeCategory && <> in <strong>{activeCategory.name}</strong></>}
+              {q && <> for &ldquo;{q}&rdquo;</>}
+            </p>
+            <form method="GET" action="/products">
+              <div style={{ position: 'relative' }}>
+                <input
+                  type="text"
+                  name="q"
+                  defaultValue={q || ''}
+                  placeholder="Search products..."
+                  style={{ padding: '.5rem 2.25rem .5rem .75rem', borderRadius: 8, border: '1px solid var(--border)', fontSize: '.875rem', fontFamily: 'inherit', background: 'var(--card)', minWidth: 200 }}
+                />
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', color: 'var(--muted)' }}>
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
                 </svg>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  No products found
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Try adjusting your search or filter criteria.
-                </p>
-                <Link
-                  href="/products"
-                  className="mt-4 inline-block text-sm text-gold hover:text-gold-light font-medium"
-                >
-                  Clear all filters
-                </Link>
               </div>
-            )}
+            </form>
           </div>
+
+          {products.length > 0 ? (
+            <div className="shop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem' }}>
+              {products.map((product: any) => (
+                <ProductCard
+                  key={product.id}
+                  product={{
+                    id: product.id,
+                    name: product.name,
+                    slug: product.slug,
+                    price: product.price,
+                    oldPrice: product.oldPrice || null,
+                    weight: product.weight || null,
+                    tagline: product.tagline || null,
+                    images: product.images.map((img: any) => ({
+                      url: img.url,
+                      alt: img.alt,
+                    })),
+                  }}
+                />
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '.5rem' }}>No products found</h3>
+              <p style={{ fontSize: '.875rem', color: 'var(--muted)' }}>Try adjusting your search or filter criteria.</p>
+              <Link href="/products" className="btn-primary" style={{ marginTop: '1rem', display: 'inline-flex' }}>Clear all filters</Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

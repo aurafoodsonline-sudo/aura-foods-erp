@@ -133,253 +133,100 @@ export default function CheckoutPage() {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <div className="animate-spin h-8 w-8 border-4 border-gray-700 border-t-gold rounded-full mx-auto" />
-        <p className="mt-4 text-gray-500">Loading checkout...</p>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '8rem 1.5rem 3rem', textAlign: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid var(--border)', borderTopColor: 'var(--gold)', borderRadius: '50%', animation: 'spin .6s linear infinite', margin: '0 auto' }} />
+        <p style={{ marginTop: '1rem', color: 'var(--muted)' }}>Loading checkout...</p>
       </div>
     );
   }
 
   if (cartItems.length === 0) {
     return (
-      <div>
-        <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/images/products/hero.jpg')] bg-cover bg-center opacity-10" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
-          </div>
-        </section>
-        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-20 w-20 text-gray-300 mx-auto mb-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={1}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"
-            />
-          </svg>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Your cart is empty
-          </h2>
-          <p className="text-gray-500 mb-6">
-            Add some products before checking out.
-          </p>
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold"
-          >
-            Browse Products
-          </Link>
+      <div className="checkout-page" style={{ padding: '8rem 1.5rem 3rem', maxWidth: 720, margin: '0 auto' }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem' }}>Checkout</h1>
+        <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+          <h2 style={{ fontSize: '1.25rem', marginBottom: '.5rem' }}>Your cart is empty</h2>
+          <p style={{ color: 'var(--muted)', marginBottom: '1.5rem' }}>Add some products before checking out.</p>
+          <Link href="/products" className="btn-primary" style={{ display: 'inline-flex' }}>Browse Products</Link>
         </div>
       </div>
     );
   }
 
   return (
-    <div>
-      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/products/hero.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
-          <p className="mt-2 text-gray-300">
-            Fill in your details to place your order.
-          </p>
-        </div>
-      </section>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Customer Details */}
-            <div className="lg:col-span-3 space-y-5">
-              <h2 className="text-xl font-bold text-gray-900">
-                Customer Details
-              </h2>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={form.customerName}
-                  onChange={(e) =>
-                    setForm({ ...form, customerName: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="Enter your full name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="tel"
-                  value={form.customerPhone}
-                  onChange={(e) =>
-                    setForm({ ...form, customerPhone: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="03XX-XXXXXXX"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={form.customerEmail}
-                  onChange={(e) =>
-                    setForm({ ...form, customerEmail: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Delivery Address <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  value={form.customerAddress}
-                  onChange={(e) =>
-                    setForm({ ...form, customerAddress: e.target.value })
-                  }
-                  rows={3}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="House/Street/Area"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  City <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={form.customerCity}
-                  onChange={(e) =>
-                    setForm({ ...form, customerCity: e.target.value })
-                  }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="City"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Order Notes
-                </label>
-                <textarea
-                  value={form.notes}
-                  onChange={(e) =>
-                    setForm({ ...form, notes: e.target.value })
-                  }
-                  rows={3}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                  placeholder="Any special instructions..."
-                />
-              </div>
-            </div>
-
-            {/* Order Summary */}
-            <div className="lg:col-span-2">
-              <div className="bg-gray-900 rounded-lg border border-gray-800 p-5 sticky top-24">
-                <h2 className="text-lg font-bold text-gold mb-4">
-                  Order Summary
-                </h2>
-
-                <div className="space-y-3 mb-4">
-                  {cartItems.map((item) => {
-                    const product = getProduct(item.productId);
-                    return (
-                      <div
-                        key={item.productId}
-                        className="flex justify-between text-sm"
-                      >
-                        <span className="text-gray-300 truncate max-w-[180px]">
-                          {product?.name || item.name}
-                          <span className="text-gray-500 ml-1">
-                            x{item.quantity}
-                          </span>
-                        </span>
-                        <span className="text-gray-100 font-medium">
-                          Rs.{" "}
-                          {(
-                            (product?.price || item.price || 0) * item.quantity
-                          ).toLocaleString()}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <hr className="my-3" />
-
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-400">
-                    <span>Subtotal</span>
-                    <span>Rs. {subtotal.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Delivery</span>
-                    <span>
-                      {deliveryCharge === 0
-                        ? subtotal >= 500
-                          ? "Free"
-                          : "Rs. 0"
-                        : `Rs. ${deliveryCharge}`}
-                    </span>
-                  </div>
-                  <hr className="my-2" />
-                  <div className="flex justify-between text-lg font-bold text-gray-100">
-                    <span>Total</span>
-                    <span className="text-gold">
-                      Rs. {total.toLocaleString()}
-                    </span>
-                  </div>
-                </div>
-
-                {error && (
-                  <p className="mt-3 text-sm text-red-600 bg-red-50 p-3 rounded-lg">
-                    {error}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="mt-5 w-full bg-gold hover:bg-gold-light disabled:bg-gray-600 text-black py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
-                >
-                  {submitting ? (
-                    <>
-                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
-                      Processing...
-                    </>
-                  ) : (
-                    "Place Order"
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
+    <div className="checkout-page" style={{ padding: '8rem 1.5rem 3rem', maxWidth: 720, margin: '0 auto' }}>
+      <div className="breadcrumbs" style={{ display: 'flex', gap: '.5rem', fontSize: '.8125rem', color: 'var(--muted)', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+        <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
+        <span>/</span>
+        <Link href="/cart" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Cart</Link>
+        <span>/</span>
+        <span className="current" style={{ color: 'var(--ink)', fontWeight: 600 }}>Checkout</span>
       </div>
+
+      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem' }}>Checkout</h1>
+
+      {error && (
+        <div style={{ padding: '.75rem 1rem', background: '#f8d7da', color: '#721c24', borderRadius: '.75rem', textAlign: 'center', fontWeight: 500, marginTop: '1rem' }}>{error}</div>
+      )}
+
+      <form className="checkout-form" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '2rem' }}>
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Full Name <span style={{ color: '#c0392b' }}>*</span></label>
+          <input type="text" value={form.customerName} onChange={(e) => setForm({ ...form, customerName: e.target.value })} required placeholder="Enter your full name" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+        </div>
+
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Phone Number <span style={{ color: '#c0392b' }}>*</span></label>
+          <input type="tel" value={form.customerPhone} onChange={(e) => setForm({ ...form, customerPhone: e.target.value })} required placeholder="03XX-XXXXXXX" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+        </div>
+
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Email</label>
+          <input type="email" value={form.customerEmail} onChange={(e) => setForm({ ...form, customerEmail: e.target.value })} placeholder="your@email.com" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+        </div>
+
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>City <span style={{ color: '#c0392b' }}>*</span></label>
+          <input type="text" value={form.customerCity} onChange={(e) => setForm({ ...form, customerCity: e.target.value })} required placeholder="e.g. Karachi" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+        </div>
+
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Delivery Address <span style={{ color: '#c0392b' }}>*</span></label>
+          <textarea value={form.customerAddress} onChange={(e) => setForm({ ...form, customerAddress: e.target.value })} rows={3} required placeholder="Street, house number, landmark" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)', resize: 'vertical' }} />
+        </div>
+
+        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem' }}>
+          <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Payment Method</label>
+          <div className="payment-options" style={{ display: 'flex', flexDirection: 'column', gap: '.5rem' }}>
+            {[
+              { value: 'cod', label: 'Cash on Delivery', desc: 'Pay when you receive' },
+              { value: 'jazzcash', label: 'JazzCash', desc: 'Manual verification required' },
+              { value: 'easypaisa', label: 'Easypaisa', desc: 'Manual verification required' },
+            ].map((opt) => (
+              <label key={opt.value} className="payment-option" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', padding: '.75rem 1rem', border: '1px solid var(--border)', borderRadius: '.75rem', cursor: 'pointer' }}>
+                <input type="radio" name="payment" value={opt.value} defaultChecked={opt.value === 'cod'} style={{ accentColor: 'var(--gold)' }} />
+                <div><strong>{opt.label}</strong><br /><span style={{ fontSize: '.8125rem', color: 'var(--muted)' }}>{opt.desc}</span></div>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.5rem', marginTop: '.5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '.5rem 0', fontSize: '.875rem', color: 'var(--muted)' }}>
+            <span>Subtotal ({cartItems.length} items)</span><span>Rs. {subtotal.toLocaleString()}</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '.5rem 0', fontSize: '.875rem', color: 'var(--muted)' }}>
+            <span>Delivery</span><span>{deliveryCharge === 0 ? 'Free' : `Rs. ${deliveryCharge}`}</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '.5rem 0', fontSize: '1.125rem', fontWeight: 700, borderTop: '1px solid var(--border)', marginTop: '.5rem', paddingTop: '1rem' }}>
+            <span>Total</span><span style={{ color: 'var(--olive)' }}>Rs. {total.toLocaleString()}</span>
+          </div>
+        </div>
+
+        <button type="submit" disabled={submitting} className="btn-checkout" style={{ display: 'block', width: '100%', padding: '.875rem', borderRadius: 9999, background: 'linear-gradient(135deg, var(--gold), #d4b85a)', color: 'var(--ink)', fontWeight: 700, fontSize: '.9375rem', border: 'none', cursor: 'pointer', textAlign: 'center', marginTop: '1rem' }}>
+          {submitting ? 'Processing...' : 'Place Order'}
+        </button>
+      </form>
     </div>
   );
 }

@@ -6,6 +6,7 @@ interface AddToCartButtonProps {
   productId: number;
   productName: string;
   price: number;
+  className?: string;
 }
 
 interface CartItem {
@@ -29,8 +30,8 @@ function saveCart(items: CartItem[]) {
   window.dispatchEvent(new CustomEvent('cartUpdated'));
 }
 
-export default function AddToCartButton({ productId, productName, price }: AddToCartButtonProps) {
-  const [feedback, setFeedback] = useState<'idle' | 'added' | 'updated'>('idle');
+export default function AddToCartButton({ productId, productName, price, className }: AddToCartButtonProps) {
+  const [feedback, setFeedback] = useState<'idle' | 'added'>('idle');
 
   const getItemQuantity = useCallback((): number => {
     const cart = getCart();
@@ -68,32 +69,28 @@ export default function AddToCartButton({ productId, productName, price }: AddTo
       }
       saveCart(cart);
       setQuantity((q) => Math.max(0, q + delta));
-      setFeedback(delta > 0 ? 'added' : 'updated');
+      setFeedback(delta > 0 ? 'added' : 'idle');
       setTimeout(() => setFeedback('idle'), 1500);
     }
   };
 
   if (quantity > 0) {
     return (
-      <div className="flex items-center gap-2">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
         <button
           onClick={() => updateQuantity(-1)}
-          className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors"
+          style={{ width: 32, height: 32, borderRadius: '50%', border: '1px solid var(--border)', background: 'transparent', fontSize: '1rem', cursor: 'pointer', display: 'grid', placeItems: 'center', transition: 'all .2s' }}
           aria-label="Decrease quantity"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <span className="w-8 text-center text-sm font-medium text-gray-900">{quantity}</span>
+        <span style={{ width: 32, textAlign: 'center', fontSize: '.875rem', fontWeight: 600 }}>{quantity}</span>
         <button
           onClick={() => updateQuantity(1)}
-          className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors"
+          style={{ width: 32, height: 32, borderRadius: '50%', border: '1px solid var(--border)', background: 'transparent', fontSize: '1rem', cursor: 'pointer', display: 'grid', placeItems: 'center', transition: 'all .2s' }}
           aria-label="Increase quantity"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
       </div>
     );
@@ -102,11 +99,8 @@ export default function AddToCartButton({ productId, productName, price }: AddTo
   return (
     <button
       onClick={addToCart}
-      className={`w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-        feedback === 'added'
-          ? 'bg-green-600 text-white'
-          : 'bg-gold text-black hover:bg-gold-light active:scale-95'
-      }`}
+      className={className || 'btn-add-cart'}
+      style={className ? undefined : { width: '100%', marginTop: '.75rem', padding: '.65rem', borderRadius: 9999, border: '1px solid var(--olive)', background: feedback === 'added' ? 'var(--olive)' : 'transparent', color: feedback === 'added' ? '#fff' : 'var(--olive)', fontSize: '.8125rem', fontWeight: 600, cursor: 'pointer', transition: 'all .3s' }}
     >
       {feedback === 'added' ? 'Added!' : 'Add to Cart'}
     </button>

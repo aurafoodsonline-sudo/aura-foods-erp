@@ -20,61 +20,40 @@ export default async function PriceListPage() {
 
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/products/bundle_9.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Price List</h1>
-          <p className="mt-2 text-gray-300">
-            Complete price list of all our products. Updated regularly.
-          </p>
-        </div>
+      <section className="shop-header" style={{ padding: '8rem 1.5rem 3rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.9))', color: 'var(--cream)', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Price List</h1>
+        <p style={{ opacity: .7, marginTop: '.75rem', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
+          Complete price list of all our products. Updated regularly.
+        </p>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <p className="text-sm text-gray-500 mb-6">
-          Showing {totalProducts} product{totalProducts !== 1 ? "s" : ""} across{" "}
-          {categories.length} categor{categories.length !== 1 ? "ies" : "y"}
+      <section style={{ maxWidth: 1280, margin: '0 auto', padding: '3rem 1.5rem' }}>
+        <p style={{ fontSize: '.875rem', color: 'var(--muted)', marginBottom: '1.5rem' }}>
+          Showing {totalProducts} product{totalProducts !== 1 ? 's' : ''} across {categories.length} categor{categories.length !== 1 ? 'ies' : 'y'}
         </p>
 
         {categories.map((category: any) =>
           category.products.length > 0 ? (
-            <div key={category.id} className="mb-10">
-              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="w-2 h-6 bg-gold rounded-full" />
+            <div key={category.id} style={{ marginBottom: '2.5rem' }}>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                <span style={{ width: 4, height: 20, background: 'var(--gold)', borderRadius: 2, display: 'inline-block' }} />
                 {category.name}
               </h2>
-              <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
-                <table className="w-full text-sm">
+              <div style={{ overflowX: 'auto', borderRadius: 8, border: '1px solid var(--border)' }}>
+                <table style={{ width: '100%', fontSize: '.875rem', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr className="bg-gray-50 border-b border-gray-200">
-                      <th className="text-left px-4 py-3 font-semibold text-gray-700">
-                        Product Name
-                      </th>
-                      <th className="text-left px-4 py-3 font-semibold text-gray-700">
-                        Weight
-                      </th>
-                      <th className="text-right px-4 py-3 font-semibold text-gray-700">
-                        Price
-                      </th>
+                    <tr style={{ background: 'rgba(10,10,10,0.03)', borderBottom: '1px solid var(--border)' }}>
+                      <th style={{ textAlign: 'left', padding: '.75rem 1rem', fontWeight: 600, color: 'var(--muted)', fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.05em' }}>Product Name</th>
+                      <th style={{ textAlign: 'left', padding: '.75rem 1rem', fontWeight: 600, color: 'var(--muted)', fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.05em' }}>Weight</th>
+                      <th style={{ textAlign: 'right', padding: '.75rem 1rem', fontWeight: 600, color: 'var(--muted)', fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.05em' }}>Price</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody style={{ borderCollapse: 'collapse' }}>
                     {category.products.map((product: any, idx: number) => (
-                      <tr
-                        key={product.id}
-                        className={`${
-                          idx % 2 === 0 ? "bg-white" : "bg-gray-50/50"
-                        }                          hover:bg-gray-800 transition-colors`}
-                      >
-                        <td className="px-4 py-3 text-gray-900 font-medium">
-                          {product.name}
-                        </td>
-                        <td className="px-4 py-3 text-gray-500">
-                          {product.weight || "-"}
-                        </td>
-                        <td className="px-4 py-3 text-right font-semibold text-gold">
-                          Rs. {product.price.toLocaleString()}
-                        </td>
+                      <tr key={product.id} style={{ borderBottom: '1px solid var(--border)', background: idx % 2 === 0 ? 'var(--card)' : 'rgba(10,10,10,0.02)' }}>
+                        <td style={{ padding: '.75rem 1rem', fontWeight: 500 }}>{product.name}</td>
+                        <td style={{ padding: '.75rem 1rem', color: 'var(--muted)' }}>{product.weight || '-'}</td>
+                        <td style={{ padding: '.75rem 1rem', textAlign: 'right', fontWeight: 700, color: 'var(--olive)' }}>Rs. {product.price.toLocaleString()}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -84,8 +63,7 @@ export default async function PriceListPage() {
           ) : null
         )}
 
-        {/* Print Button */}
-        <div className="text-center mt-8 print:hidden">
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <PrintButton />
         </div>
       </section>

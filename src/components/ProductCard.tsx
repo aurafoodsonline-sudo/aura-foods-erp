@@ -21,65 +21,68 @@ export interface Product {
 
 interface ProductCardProps {
   product: Product;
+  showAddToCart?: boolean;
+  showBadge?: string | false;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, showAddToCart = true, showBadge }: ProductCardProps) {
   const imageUrl = product.images?.[0]?.url;
   const imageAlt = product.images?.[0]?.alt || product.name;
 
   return (
-    <div className="group bg-gray-900 rounded-lg border border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
-      <Link href={`/products/${product.slug}`} className="block">
-        <div className="aspect-square bg-gray-100 relative overflow-hidden">
+    <div className="product-card fade-up" style={{ position: 'relative', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden', transition: 'all .3s' }}>
+      <Link href={`/products/${product.slug}`} className="card-link" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+        {showBadge && (
+          <span className="card-badge card-badge-seller" style={{ position: 'absolute', top: '.75rem', left: '.75rem', fontSize: '.625rem', textTransform: 'uppercase', letterSpacing: '.1em', padding: '.35rem .75rem', borderRadius: 9999, fontWeight: 700, zIndex: 2, background: 'var(--gold)', color: 'var(--ink)' }}>
+            {showBadge}
+          </span>
+        )}
+        <div style={{ aspectRatio: '1/1', background: 'rgba(10,10,10,0.03)', overflow: 'hidden' }}>
           {imageUrl ? (
             <img
               src={imageUrl}
               alt={imageAlt}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="card-img"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-400">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted)' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             </div>
           )}
         </div>
       </Link>
 
-      <div className="p-4 flex flex-col flex-1">
-        <Link href={`/products/${product.slug}`}>
-          <h3 className="text-base font-semibold text-gray-100 group-hover:text-gold transition-colors line-clamp-1">
-            {product.name}
-          </h3>
+      <div className="product-info" style={{ padding: '1rem 1.25rem 1.25rem' }}>
+        <Link href={`/products/${product.slug}`} className="card-link" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+          <div className="product-name" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, fontSize: '1rem' }}>{product.name}</div>
+          {product.tagline && (
+            <div className="product-tagline" style={{ fontSize: '.8125rem', color: 'var(--muted)', marginTop: '.15rem' }}>{product.tagline}</div>
+          )}
+          <div className="product-price-row" style={{ display: 'flex', alignItems: 'center', gap: '.75rem', marginTop: '.5rem' }}>
+            <span className="product-price" style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--olive)' }}>
+              Rs. {product.price.toLocaleString()}
+            </span>
+            {product.oldPrice && product.oldPrice > product.price && (
+              <span className="product-weight" style={{ fontSize: '.75rem', color: 'var(--muted)', textDecoration: 'line-through' }}>
+                Rs. {product.oldPrice.toLocaleString()}
+              </span>
+            )}
+            {product.weight && (
+              <span className="product-weight" style={{ fontSize: '.75rem', color: 'var(--muted)' }}>{product.weight}</span>
+            )}
+          </div>
         </Link>
 
-        {product.tagline && (
-          <p className="text-sm text-gray-400 mt-1 line-clamp-1">{product.tagline}</p>
+        {showAddToCart && (
+          <div style={{ marginTop: '.75rem' }}>
+            <AddToCartButton
+              productId={product.id}
+              productName={product.name}
+              price={product.price}
+            />
+          </div>
         )}
-
-        {product.weight && (
-          <p className="text-xs text-gray-400 mt-1">{product.weight}</p>
-        )}
-
-        <div className="mt-auto pt-3 flex items-center gap-2">
-          <span className="text-lg font-bold text-gold">
-            Rs. {product.price.toLocaleString()}
-          </span>
-          {product.oldPrice && product.oldPrice > product.price && (
-            <span className="text-sm text-gray-400 line-through">
-              Rs. {product.oldPrice.toLocaleString()}
-            </span>
-          )}
-        </div>
-
-        <div className="mt-3">
-          <AddToCartButton
-            productId={product.id}
-            productName={product.name}
-            price={product.price}
-          />
-        </div>
       </div>
     </div>
   );

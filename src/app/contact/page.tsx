@@ -55,216 +55,72 @@ export default function ContactPage() {
   };
 
   return (
-    <div>
-      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/products/bundle_15.jpg')] bg-cover bg-center opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Contact Us</h1>
-          <p className="mt-2 text-gray-300">
-            We&apos;d love to hear from you. Get in touch with us.
+    <div className="contact-page" style={{ padding: '8rem 1.5rem 3rem', maxWidth: 1280, margin: '0 auto' }}>
+      <div className="section-header" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 2rem' }}>
+        <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Get in Touch</div>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', marginTop: '.75rem' }}>We&apos;d Love to Hear From You</h1>
+        <p style={{ color: 'var(--muted)', marginTop: '.75rem' }}>Questions, wholesale inquiries, or just want to say hello — drop us a message.</p>
+      </div>
+
+      {status && (
+        <div style={{ maxWidth: 640, margin: '0 auto 2rem', padding: '1rem 1.5rem', borderRadius: '.75rem', textAlign: 'center', fontWeight: 500, background: status.type === 'success' ? '#d4edda' : '#f8d7da', color: status.type === 'success' ? '#155724' : '#721c24' }}>
+          {status.message}
+        </div>
+      )}
+
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginTop: '2rem' }}>
+        <div className="contact-info">
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.75rem' }}>Reach Out</h2>
+          <p style={{ color: 'var(--muted)', marginTop: '.75rem', lineHeight: 1.7 }}>
+            We typically respond within 24 hours. For urgent orders, please reach out via WhatsApp.
           </p>
-        </div>
-      </section>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Info */}
-          <div>
-            <div className="rounded-xl overflow-hidden mb-8">
-              <img
-                src="/images/products/bundle_15.jpg"
-                alt="Aura Foods premium spice collection"
-                className="w-full h-64 object-cover"
-              />
-            </div>
-            <h2 className="text-2xl font-bold text-gold mb-6">
-              Get in Touch
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Have a question, feedback, or just want to say hello? We&apos;re here
-              to help. Reach out to us through any of the channels below or send
-              us a message.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
+          <div className="contact-details" style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {[
+              { icon: 'Tel', label: 'Phone', value: '+92 335 2832967' },
+              { icon: 'Mail', label: 'Email', value: 'aurafoodsonline@gmail.com' },
+              { icon: 'Map', label: 'Address', value: 'Karachi, Lahore' },
+              { icon: 'Chat', label: 'WhatsApp', value: <a href="https://wa.me/923352832967" target="_blank" rel="noopener" style={{ color: 'var(--olive)', fontWeight: 600, textDecoration: 'none' }}>Chat on WhatsApp</a> },
+            ].map((item) => (
+              <div key={item.label} className="contact-detail" style={{ display: 'flex', gap: '1rem' }}>
+                <div className="contact-detail-icon" style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(212,175,55,0.1)', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: '.7rem', fontWeight: 600, color: 'var(--gold)' }}>
+                  {item.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-100">Phone</h3>
-                  <p className="text-gray-400 mt-1">+92 335 2832967</p>
+                  <div className="contact-detail-label" style={{ fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--muted)' }}>{item.label}</div>
+                  <div className="contact-detail-value" style={{ fontWeight: 600, marginTop: '.1rem' }}>{item.value}</div>
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-100">Email</h3>
-                  <p className="text-gray-400 mt-1">
-                    aurafoodsonline@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-100">Location</h3>
-                  <p className="text-gray-400 mt-1">Lahore, Pakistan</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
-
-          {/* Contact Form */}
-          <div>
-            <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 sm:p-8 shadow-sm">
-              <h2 className="text-xl font-bold text-gold mb-6">
-                Send Us a Message
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">
-                    Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) =>
-                      setForm({ ...form, name: e.target.value })
-                    }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) =>
-                      setForm({ ...form, phone: e.target.value })
-                    }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    placeholder="03XX-XXXXXXX"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
-                    rows={5}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    placeholder="How can we help you?"
-                    required
-                  />
-                </div>
-
-                {status && (
-                  <div
-                    className={`p-3 rounded-lg text-sm ${
-                      status.type === "success"
-                        ? "bg-green-50 text-green-700"
-                        : "bg-red-50 text-red-600"
-                    }`}
-                  >
-                    {status.message}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full bg-gold hover:bg-gold-light disabled:bg-gray-600 text-black py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
-                >
-                  {submitting ? (
-                    <>
-                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
-              </form>
-            </div>
+          <div className="footer-social" style={{ marginTop: '2rem', display: 'flex', gap: '.5rem' }}>
+            <a href="https://wa.me/923352832967" target="_blank" rel="noopener" aria-label="WhatsApp" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(10,10,10,0.2)', color: 'var(--ink)', textDecoration: 'none', fontSize: '.7rem', fontWeight: 600 }}>WA</a>
+            <a href="https://www.instagram.com/aurafoodsonline?igsh=OWxkODFrcTdxYzUy" target="_blank" rel="noopener" aria-label="Instagram" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(10,10,10,0.2)', color: 'var(--ink)', textDecoration: 'none', fontSize: '.7rem', fontWeight: 600 }}>IG</a>
+            <a href="https://www.facebook.com/share/1Ctuc2U2rj/" target="_blank" rel="noopener" aria-label="Facebook" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(10,10,10,0.2)', color: 'var(--ink)', textDecoration: 'none', fontSize: '.7rem', fontWeight: 600 }}>FB</a>
+            <a href="https://www.daraz.pk/shop/d-mall-23/" target="_blank" rel="noopener" aria-label="Daraz Shop" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(10,10,10,0.2)', color: 'var(--ink)', textDecoration: 'none', fontSize: '.7rem', fontWeight: 600 }}>DZ</a>
           </div>
         </div>
+
+        <form className="contact-form" onSubmit={handleSubmit} style={{ background: 'var(--card)', padding: '2rem', borderRadius: 8, border: '1px solid var(--border)' }}>
+          <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem', marginBottom: '1rem' }}>
+            <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Full Name <span style={{ color: '#c0392b' }}>*</span></label>
+            <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required maxLength={200} placeholder="Your name" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+          </div>
+          <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem', marginBottom: '1rem' }}>
+            <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Email</label>
+            <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={254} placeholder="your@email.com" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+          </div>
+          <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem', marginBottom: '1rem' }}>
+            <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Phone</label>
+            <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} maxLength={50} placeholder="+92 335 2832967" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)' }} />
+          </div>
+          <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '.35rem', marginBottom: '1.5rem' }}>
+            <label style={{ fontSize: '.8125rem', fontWeight: 600, color: 'var(--muted)' }}>Message <span style={{ color: '#c0392b' }}>*</span></label>
+            <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} required minLength={10} maxLength={2000} placeholder="How can we help you?" style={{ padding: '.75rem 1rem', borderRadius: '.75rem', border: '1px solid var(--border)', fontSize: '.9375rem', fontFamily: 'inherit', background: 'var(--card)', resize: 'vertical' }} />
+          </div>
+          <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+            {submitting ? 'Sending...' : 'Send Message'}
+          </button>
+        </form>
       </div>
     </div>
   );
