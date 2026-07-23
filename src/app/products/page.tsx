@@ -37,10 +37,10 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Our Products</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             Discover our range of premium, organic spices.
           </p>
         </div>
@@ -50,17 +50,17 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
           <aside className="lg:w-64 shrink-0">
-            <div className="bg-white rounded-lg border border-gray-200 p-5 sticky top-24">
-              <h3 className="font-semibold text-gray-900 mb-4">Categories</h3>
+            <div className="bg-gray-900 rounded-lg border border-gray-800 p-5 sticky top-24">
+              <h3 className="font-semibold text-gray-100 mb-4">Categories</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/products"
-                    className={`block px-3 py-2 rounded-md text-sm transition-colors ${
-                      !categorySlug
-                        ? "bg-emerald-700 text-white"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
+                      className={`block px-3 py-2 rounded-md text-sm transition-colors ${
+                        !categorySlug
+                          ? "bg-gold text-black"
+                          : "text-gray-400 hover:bg-gray-800"
+                      }`}
                   >
                     All Products
                   </Link>
@@ -71,8 +71,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                       href={`/products?category=${cat.slug}`}
                       className={`block px-3 py-2 rounded-md text-sm transition-colors ${
                         categorySlug === cat.slug
-                          ? "bg-emerald-700 text-white"
-                          : "text-gray-600 hover:bg-gray-100"
+                          ? "bg-gold text-black"
+                          : "text-gray-400 hover:bg-gray-800"
                       }`}
                     >
                       {cat.name}
@@ -111,7 +111,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                     name="q"
                     defaultValue={q || ""}
                     placeholder="Search products..."
-                    className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +169,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                 </p>
                 <Link
                   href="/products"
-                  className="mt-4 inline-block text-sm text-emerald-700 hover:text-emerald-800 font-medium"
+                  className="mt-4 inline-block text-sm text-gold hover:text-gold-light font-medium"
                 >
                   Clear all filters
                 </Link>

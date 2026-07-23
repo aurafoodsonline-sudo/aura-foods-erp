@@ -32,13 +32,13 @@ export default async function CategoryProductsPage({
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-emerald-700 transition-colors">
+            <Link href="/" className="hover:text-gold transition-colors">
               Home
             </Link>
             <span>/</span>
             <Link
               href="/categories"
-              className="hover:text-emerald-700 transition-colors"
+              className="hover:text-gold transition-colors"
             >
               Categories
             </Link>
@@ -49,11 +49,11 @@ export default async function CategoryProductsPage({
       </div>
 
       {/* Header */}
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">{category.name}</h1>
           {category.description && (
-            <p className="mt-2 text-emerald-100 max-w-2xl">
+            <p className="mt-2 text-gray-300 max-w-2xl">
               {category.description}
             </p>
           )}
@@ -113,7 +113,7 @@ export default async function CategoryProductsPage({
             </p>
             <Link
               href="/products"
-              className="mt-4 inline-block text-sm text-emerald-700 hover:text-emerald-800 font-medium"
+              className="mt-4 inline-block text-sm text-gold hover:text-gold-light font-medium"
             >
               Browse all products
             </Link>

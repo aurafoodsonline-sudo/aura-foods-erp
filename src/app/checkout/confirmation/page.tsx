@@ -10,10 +10,10 @@ function ConfirmationContent() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-      <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+      <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10 text-emerald-700"
+          className="h-10 w-10 text-gold"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -33,20 +33,20 @@ function ConfirmationContent() {
         Thank you for your order. We&apos;ll process it shortly.
       </p>
       {orderNumber && (
-        <p className="text-lg font-semibold text-emerald-700 mb-8">
+        <p className="text-lg font-semibold text-gold mb-8">
           Order Number: {orderNumber}
         </p>
       )}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Link
           href="/products"
-          className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-3 rounded-lg font-semibold transition-all"
+          className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold transition-all"
         >
           Continue Shopping
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-emerald-700 px-8 py-3 rounded-lg font-semibold transition-all"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-gold px-8 py-3 rounded-lg font-semibold transition-all"
         >
           Back to Home
         </Link>
@@ -58,7 +58,7 @@ function ConfirmationContent() {
 export default function ConfirmationPage() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Order Confirmation</h1>
         </div>
@@ -66,7 +66,7 @@ export default function ConfirmationPage() {
       <Suspense
         fallback={
           <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-            <div className="animate-spin h-8 w-8 border-4 border-emerald-200 border-t-emerald-700 rounded-full mx-auto" />
+            <div className="animate-spin h-8 w-8 border-4 border-gray-700 border-t-gold rounded-full mx-auto" />
           </div>
         }
       >

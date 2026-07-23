@@ -9,10 +9,10 @@ export default async function CategoriesPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Categories</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             Explore our range of premium spice categories.
           </p>
         </div>

@@ -23,7 +23,7 @@ export default function AdminLayout({ children, user, onLogout }: AdminLayoutPro
                 <p className="text-xs text-gray-500">{user.email}</p>
               )}
             </div>
-            <div className="w-9 h-9 bg-emerald-700 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+            <div className="w-9 h-9 bg-gold rounded-full flex items-center justify-center text-black text-sm font-semibold">
               {(user?.name || 'A').charAt(0).toUpperCase()}
             </div>
           </div>

@@ -93,7 +93,7 @@ export default function CartPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <div className="animate-spin h-8 w-8 border-4 border-emerald-200 border-t-emerald-700 rounded-full mx-auto" />
+        <div className="animate-spin h-8 w-8 border-4 border-gray-700 border-t-gold rounded-full mx-auto" />
         <p className="mt-4 text-gray-500">Loading cart...</p>
       </div>
     );
@@ -101,10 +101,10 @@ export default function CartPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Shopping Cart</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             Review your items and proceed to checkout.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function CartPage() {
             </p>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-3 rounded-lg font-semibold transition-all"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold transition-all"
             >
               Browse Products
               <svg
@@ -159,7 +159,7 @@ export default function CartPage() {
               return (
                 <div
                   key={item.productId}
-                  className="bg-white rounded-lg border border-gray-200 p-4 flex items-center gap-4"
+                  className="bg-gray-900 rounded-lg border border-gray-800 p-4 flex items-center gap-4"
                 >
                   <Link
                     href={`/products/${product?.slug || ""}`}
@@ -190,7 +190,7 @@ export default function CartPage() {
                   <div className="flex-1 min-w-0">
                     <Link
                       href={`/products/${product?.slug || ""}`}
-                      className="text-sm font-semibold text-gray-900 hover:text-emerald-700 transition-colors line-clamp-1"
+                      className="text-sm font-semibold text-gray-100 hover:text-gold transition-colors line-clamp-1"
                     >
                       {product?.name || item.name}
                     </Link>
@@ -199,7 +199,7 @@ export default function CartPage() {
                         {product.weight}
                       </p>
                     )}
-                    <p className="text-sm font-bold text-emerald-700 mt-1">
+                    <p className="text-sm font-bold text-gold mt-1">
                       Rs.{" "}
                       {((product?.price || item.price || 0) * item.quantity).toLocaleString()}
                     </p>
@@ -266,13 +266,13 @@ export default function CartPage() {
             })}
 
             {/* Summary */}
-            <div className="bg-white rounded-lg border border-gray-200 p-6 mt-6">
+            <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mt-6">
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-gray-400">
                   <span>Subtotal</span>
                   <span>Rs. {subtotal.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-gray-400">
                   <span>Delivery Charge</span>
                   <span>
                     {deliveryCharge === 0
@@ -283,15 +283,15 @@ export default function CartPage() {
                   </span>
                 </div>
                 {subtotal > 0 && subtotal < 500 && (
-                  <p className="text-xs text-amber-600">
+                  <p className="text-xs text-gold-light">
                     Add Rs. {(500 - subtotal).toLocaleString()} more for free
                     delivery!
                   </p>
                 )}
                 <hr className="my-2" />
-                <div className="flex justify-between text-lg font-bold text-gray-900">
+                <div className="flex justify-between text-lg font-bold text-gray-100">
                   <span>Total</span>
-                  <span className="text-emerald-700">
+                  <span className="text-gold">
                     Rs. {total.toLocaleString()}
                   </span>
                 </div>
@@ -299,14 +299,14 @@ export default function CartPage() {
 
               <Link
                 href="/checkout"
-                className="mt-6 block w-full text-center bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded-lg font-semibold transition-all"
+                className="mt-6 block w-full text-center bg-gold hover:bg-gold-light text-black py-3 rounded-lg font-semibold transition-all"
               >
                 Proceed to Checkout
               </Link>
 
               <Link
                 href="/products"
-                className="mt-3 block w-full text-center text-sm text-gray-500 hover:text-emerald-700 transition-colors"
+                className="mt-3 block w-full text-center text-sm text-gray-400 hover:text-gold transition-colors"
               >
                 Continue Shopping
               </Link>

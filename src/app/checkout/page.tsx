@@ -134,7 +134,7 @@ export default function CheckoutPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <div className="animate-spin h-8 w-8 border-4 border-emerald-200 border-t-emerald-700 rounded-full mx-auto" />
+        <div className="animate-spin h-8 w-8 border-4 border-gray-700 border-t-gold rounded-full mx-auto" />
         <p className="mt-4 text-gray-500">Loading checkout...</p>
       </div>
     );
@@ -143,7 +143,7 @@ export default function CheckoutPage() {
   if (cartItems.length === 0) {
     return (
       <div>
-        <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+        <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
           </div>
@@ -171,7 +171,7 @@ export default function CheckoutPage() {
           </p>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-3 rounded-lg font-semibold"
+            className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold"
           >
             Browse Products
           </Link>
@@ -182,10 +182,10 @@ export default function CheckoutPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             Fill in your details to place your order.
           </p>
         </div>
@@ -210,7 +210,7 @@ export default function CheckoutPage() {
                   onChange={(e) =>
                     setForm({ ...form, customerName: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="Enter your full name"
                   required
                 />
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                   onChange={(e) =>
                     setForm({ ...form, customerPhone: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="03XX-XXXXXXX"
                   required
                 />
@@ -242,7 +242,7 @@ export default function CheckoutPage() {
                   onChange={(e) =>
                     setForm({ ...form, customerEmail: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="your@email.com"
                 />
               </div>
@@ -257,7 +257,7 @@ export default function CheckoutPage() {
                     setForm({ ...form, customerAddress: e.target.value })
                   }
                   rows={3}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="House/Street/Area"
                   required
                 />
@@ -273,7 +273,7 @@ export default function CheckoutPage() {
                   onChange={(e) =>
                     setForm({ ...form, customerCity: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="City"
                   required
                 />
@@ -289,7 +289,7 @@ export default function CheckoutPage() {
                     setForm({ ...form, notes: e.target.value })
                   }
                   rows={3}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   placeholder="Any special instructions..."
                 />
               </div>
@@ -297,8 +297,8 @@ export default function CheckoutPage() {
 
             {/* Order Summary */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-lg border border-gray-200 p-5 sticky top-24">
-                <h2 className="text-lg font-bold text-gray-900 mb-4">
+              <div className="bg-gray-900 rounded-lg border border-gray-800 p-5 sticky top-24">
+                <h2 className="text-lg font-bold text-gold mb-4">
                   Order Summary
                 </h2>
 
@@ -310,13 +310,13 @@ export default function CheckoutPage() {
                         key={item.productId}
                         className="flex justify-between text-sm"
                       >
-                        <span className="text-gray-600 truncate max-w-[180px]">
+                        <span className="text-gray-300 truncate max-w-[180px]">
                           {product?.name || item.name}
-                          <span className="text-gray-400 ml-1">
+                          <span className="text-gray-500 ml-1">
                             x{item.quantity}
                           </span>
                         </span>
-                        <span className="text-gray-900 font-medium">
+                        <span className="text-gray-100 font-medium">
                           Rs.{" "}
                           {(
                             (product?.price || item.price || 0) * item.quantity
@@ -330,11 +330,11 @@ export default function CheckoutPage() {
                 <hr className="my-3" />
 
                 <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-600">
+                  <div className="flex justify-between text-gray-400">
                     <span>Subtotal</span>
                     <span>Rs. {subtotal.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-gray-600">
+                  <div className="flex justify-between text-gray-400">
                     <span>Delivery</span>
                     <span>
                       {deliveryCharge === 0
@@ -345,9 +345,9 @@ export default function CheckoutPage() {
                     </span>
                   </div>
                   <hr className="my-2" />
-                  <div className="flex justify-between text-lg font-bold text-gray-900">
+                  <div className="flex justify-between text-lg font-bold text-gray-100">
                     <span>Total</span>
-                    <span className="text-emerald-700">
+                    <span className="text-gold">
                       Rs. {total.toLocaleString()}
                     </span>
                   </div>
@@ -362,7 +362,7 @@ export default function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="mt-5 w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-gray-400 text-white py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                  className="mt-5 w-full bg-gold hover:bg-gold-light disabled:bg-gray-600 text-black py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   {submitting ? (
                     <>

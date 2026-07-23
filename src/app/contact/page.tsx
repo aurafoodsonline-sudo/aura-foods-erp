@@ -56,10 +56,10 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Contact Us</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             We&apos;d love to hear from you. Get in touch with us.
           </p>
         </div>
@@ -69,10 +69,10 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl font-bold text-gold mb-6">
               Get in Touch
             </h2>
-            <p className="text-gray-500 mb-8">
+            <p className="text-gray-400 mb-8">
               Have a question, feedback, or just want to say hello? We&apos;re here
               to help. Reach out to us through any of the channels below or send
               us a message.
@@ -80,7 +80,7 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -97,13 +97,13 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-500 mt-1">+92 335 2832967</p>
+                  <h3 className="font-semibold text-gray-100">Phone</h3>
+                  <p className="text-gray-400 mt-1">+92 335 2832967</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -120,15 +120,15 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-500 mt-1">
+                  <h3 className="font-semibold text-gray-100">Email</h3>
+                  <p className="text-gray-400 mt-1">
                     aurafoodsonline@gmail.com
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -150,8 +150,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Location</h3>
-                  <p className="text-gray-500 mt-1">Lahore, Pakistan</p>
+                  <h3 className="font-semibold text-gray-100">Location</h3>
+                  <p className="text-gray-400 mt-1">Lahore, Pakistan</p>
                 </div>
               </div>
             </div>
@@ -159,14 +159,14 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div>
-            <div className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 sm:p-8 shadow-sm">
+              <h2 className="text-xl font-bold text-gold mb-6">
                 Send Us a Message
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -175,14 +175,14 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setForm({ ...form, name: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="Your name"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Email
                   </label>
                   <input
@@ -191,13 +191,13 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Phone
                   </label>
                   <input
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setForm({ ...form, phone: e.target.value })
                     }
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="03XX-XXXXXXX"
                   />
                 </div>
@@ -221,7 +221,7 @@ export default function ContactPage() {
                       setForm({ ...form, message: e.target.value })
                     }
                     rows={5}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="How can we help you?"
                     required
                   />
@@ -242,7 +242,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-gray-400 text-white py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-gold hover:bg-gold-light disabled:bg-gray-600 text-black py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   {submitting ? (
                     <>

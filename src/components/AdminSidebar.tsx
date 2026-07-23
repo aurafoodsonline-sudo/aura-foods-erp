@@ -34,7 +34,7 @@ export default function AdminSidebar({ userName = 'Admin', onLogout }: AdminSide
     <>
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-emerald-800 text-white rounded-md shadow-lg"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-gold-dark text-black rounded-md shadow-lg"
         aria-label="Toggle sidebar"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -43,20 +43,20 @@ export default function AdminSidebar({ userName = 'Admin', onLogout }: AdminSide
       </button>
 
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-emerald-950 text-white flex flex-col transition-transform duration-300 ${
+        className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-gray-950 text-gray-100 flex flex-col transition-transform duration-300 border-r border-gray-800 ${
           collapsed ? '-translate-x-full lg:translate-x-0' : 'translate-x-0'
         }`}
       >
-        <div className="p-5 border-b border-emerald-800">
-          <Link href="/admin" className="text-xl font-bold">
-            Aura <span className="text-amber-400">Foods</span>
+        <div className="p-5 border-b border-gray-800">
+          <Link href="/admin" className="text-xl font-bold text-gold">
+            Aura <span className="text-gold-light">Foods</span>
           </Link>
-          <p className="text-xs text-emerald-300 mt-1">Admin Panel</p>
+          <p className="text-xs text-gray-500 mt-1">Admin Panel</p>
         </div>
 
-        <div className="px-4 py-3 border-b border-emerald-800">
-          <p className="text-sm text-emerald-300">Logged in as</p>
-          <p className="text-sm font-medium truncate">{userName}</p>
+        <div className="px-4 py-3 border-b border-gray-800">
+          <p className="text-sm text-gray-500">Logged in as</p>
+          <p className="text-sm font-medium truncate text-gray-100">{userName}</p>
         </div>
 
         <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
@@ -67,8 +67,8 @@ export default function AdminSidebar({ userName = 'Admin', onLogout }: AdminSide
               onClick={() => setCollapsed(true)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                 isActive(link.href)
-                  ? 'bg-emerald-700 text-white'
-                  : 'text-emerald-200 hover:bg-emerald-800 hover:text-white'
+                  ? 'bg-gold/20 text-gold'
+                  : 'text-gray-400 hover:bg-gray-800 hover:text-gold'
               }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -79,10 +79,10 @@ export default function AdminSidebar({ userName = 'Admin', onLogout }: AdminSide
           ))}
         </nav>
 
-        <div className="p-3 border-t border-emerald-800">
+        <div className="p-3 border-t border-gray-800">
           <button
             onClick={onLogout}
-            className="flex items-center gap-3 w-full px-3 py-2.5 rounded-md text-sm font-medium text-emerald-200 hover:bg-red-700 hover:text-white transition-colors"
+            className="flex items-center gap-3 w-full px-3 py-2.5 rounded-md text-sm font-medium text-gray-400 hover:bg-red-700 hover:text-white transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />

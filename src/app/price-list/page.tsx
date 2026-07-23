@@ -20,10 +20,10 @@ export default async function PriceListPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-12 sm:py-16">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Price List</h1>
-          <p className="mt-2 text-emerald-100">
+          <p className="mt-2 text-gray-300">
             Complete price list of all our products. Updated regularly.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default async function PriceListPage() {
           category.products.length > 0 ? (
             <div key={category.id} className="mb-10">
               <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="w-2 h-6 bg-emerald-700 rounded-full" />
+                <span className="w-2 h-6 bg-gold rounded-full" />
                 {category.name}
               </h2>
               <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
@@ -63,7 +63,7 @@ export default async function PriceListPage() {
                         key={product.id}
                         className={`${
                           idx % 2 === 0 ? "bg-white" : "bg-gray-50/50"
-                        } hover:bg-emerald-50 transition-colors`}
+                        }                          hover:bg-gray-800 transition-colors`}
                       >
                         <td className="px-4 py-3 text-gray-900 font-medium">
                           {product.name}
@@ -71,7 +71,7 @@ export default async function PriceListPage() {
                         <td className="px-4 py-3 text-gray-500">
                           {product.weight || "-"}
                         </td>
-                        <td className="px-4 py-3 text-right font-semibold text-emerald-700">
+                        <td className="px-4 py-3 text-right font-semibold text-gold">
                           Rs. {product.price.toLocaleString()}
                         </td>
                       </tr>

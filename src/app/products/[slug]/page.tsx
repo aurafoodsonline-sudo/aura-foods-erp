@@ -63,11 +63,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-emerald-700 transition-colors">
+            <Link href="/" className="hover:text-gold transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/products" className="hover:text-emerald-700 transition-colors">
+            <Link href="/products" className="hover:text-gold transition-colors">
               Products
             </Link>
             {product.category && (
@@ -75,7 +75,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 <span>/</span>
                 <Link
                   href={`/products?category=${product.category.slug}`}
-                  className="hover:text-emerald-700 transition-colors"
+                  className="hover:text-gold transition-colors"
                 >
                   {product.category.name}
                 </Link>
@@ -123,7 +123,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             {product.category && (
               <Link
                 href={`/products?category=${product.category.slug}`}
-                className="text-sm text-emerald-700 font-medium hover:text-emerald-800 mb-2"
+                className="text-sm text-gold font-medium hover:text-gold-light mb-2"
               >
                 {product.category.name}
               </Link>
@@ -138,7 +138,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             )}
 
             <div className="mt-4 flex items-baseline gap-3">
-              <span className="text-3xl font-bold text-emerald-700">
+              <span className="text-3xl font-bold text-gold">
                 Rs. {product.price.toLocaleString()}
               </span>
               {product.oldPrice > product.price && (

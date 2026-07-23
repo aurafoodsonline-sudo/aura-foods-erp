@@ -105,7 +105,7 @@ export default function AddToCartButton({ productId, productName, price }: AddTo
       className={`w-full px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
         feedback === 'added'
           ? 'bg-green-600 text-white'
-          : 'bg-emerald-700 text-white hover:bg-emerald-800 active:scale-95'
+          : 'bg-gold text-black hover:bg-gold-light active:scale-95'
       }`}
     >
       {feedback === 'added' ? 'Added!' : 'Add to Cart'}

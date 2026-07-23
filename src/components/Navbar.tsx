@@ -43,12 +43,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-black shadow-lg shadow-gold/5 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-emerald-800">
-              Aura <span className="text-amber-600">Foods</span>
+            <span className="text-2xl font-bold text-gold">
+              Aura <span className="text-gold-light">Foods</span>
             </span>
           </Link>
 
@@ -57,20 +57,20 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-emerald-700 transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/cart"
-              className="relative flex items-center gap-1 text-gray-700 hover:text-emerald-700 transition-colors"
+              className="relative flex items-center gap-1 text-gray-300 hover:text-gold transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
               </svg>
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-gold text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {cartCount > 99 ? '99+' : cartCount}
                 </span>
               )}
@@ -78,19 +78,19 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            <Link href="/cart" className="relative text-gray-700">
+            <Link href="/cart" className="relative text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
               </svg>
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-gold text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {cartCount > 99 ? '99+' : cartCount}
                 </span>
               )}
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-gray-700 hover:text-emerald-700 focus:outline-none"
+              className="text-gray-300 hover:text-gold focus:outline-none"
               aria-label="Toggle menu"
             >
               {menuOpen ? (
@@ -108,14 +108,14 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="md:hidden bg-gray-900 border-t border-gray-800">
           <div className="px-4 py-3 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-md transition-colors"
+                className="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-gold hover:bg-gray-800 rounded-md transition-colors"
               >
                 {link.label}
               </Link>

@@ -15,7 +15,7 @@ interface CategoryCardProps {
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link href={`/categories/${category.slug}`} className="block group">
-      <div className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <div className="bg-gray-900 rounded-lg border border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
         <div className="aspect-square bg-gray-100 relative overflow-hidden">
           {category.image ? (
             <img
@@ -33,7 +33,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         </div>
 
         <div className="p-4 text-center">
-          <h3 className="text-base font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+          <h3 className="text-base font-semibold text-gray-100 group-hover:text-gold transition-colors">
             {category.name}
           </h3>
           {category.description && (

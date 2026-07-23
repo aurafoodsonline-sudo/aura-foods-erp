@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const imageAlt = product.images?.[0]?.alt || product.name;
 
   return (
-    <div className="group bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+    <div className="group bg-gray-900 rounded-lg border border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
       <Link href={`/products/${product.slug}`} className="block">
         <div className="aspect-square bg-gray-100 relative overflow-hidden">
           {imageUrl ? (
@@ -49,13 +49,13 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       <div className="p-4 flex flex-col flex-1">
         <Link href={`/products/${product.slug}`}>
-          <h3 className="text-base font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors line-clamp-1">
+          <h3 className="text-base font-semibold text-gray-100 group-hover:text-gold transition-colors line-clamp-1">
             {product.name}
           </h3>
         </Link>
 
         {product.tagline && (
-          <p className="text-sm text-gray-500 mt-1 line-clamp-1">{product.tagline}</p>
+          <p className="text-sm text-gray-400 mt-1 line-clamp-1">{product.tagline}</p>
         )}
 
         {product.weight && (
@@ -63,7 +63,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         <div className="mt-auto pt-3 flex items-center gap-2">
-          <span className="text-lg font-bold text-emerald-700">
+          <span className="text-lg font-bold text-gold">
             Rs. {product.price.toLocaleString()}
           </span>
           {product.oldPrice && product.oldPrice > product.price && (

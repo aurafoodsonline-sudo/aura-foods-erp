@@ -58,15 +58,15 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-10" />
+      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white">
+        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               Pure & Premium{" "}
-              <span className="text-amber-400">Organic Spices</span>
+              <span className="text-gold">Organic Spices</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-emerald-100 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
               Aura Foods brings the authentic taste of Pakistan to your kitchen.
               Sourced from Kunri — the chili capital of Sindh — our spices are
               100% pure, hygienically processed, and packed with nature&apos;s finest
@@ -75,7 +75,7 @@ export default async function HomePage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105"
+                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105"
               >
                 Explore Products
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -84,7 +84,7 @@ export default async function HomePage() {
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border-2 border-gold/30 hover:border-gold/60 text-gray-300 px-8 py-3 rounded-lg font-semibold transition-all"
               >
                 Our Story
               </Link>
@@ -94,13 +94,13 @@ export default async function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gold">
               Featured Products
             </h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
               Our most loved spices, handpicked for their exceptional quality and flavor.
             </p>
           </div>
@@ -131,7 +131,7 @@ export default async function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-semibold transition-colors"
             >
               View All Products
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -146,10 +146,10 @@ export default async function HomePage() {
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gold">
               Our Categories
             </h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
               Explore our range of premium spice categories, each crafted with care.
             </p>
           </div>
@@ -176,7 +176,7 @@ export default async function HomePage() {
                   )}
                 </div>
                 <div className="p-3 text-center">
-                  <h3 className="text-sm font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-sm font-semibold text-gray-900 group-hover:text-gold transition-colors">
                     {cat.name}
                   </h3>
                 </div>
@@ -187,11 +187,11 @@ export default async function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 sm:py-20 bg-emerald-950 text-white">
+      <section className="py-16 sm:py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold">Why Choose Aura Foods?</h2>
-            <p className="mt-3 text-emerald-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
               We are committed to bringing you the finest spices with uncompromising quality.
             </p>
           </div>
@@ -199,13 +199,13 @@ export default async function HomePage() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="bg-emerald-900/50 border border-emerald-800 rounded-xl p-6 text-center hover:bg-emerald-800/50 transition-colors"
+                className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:bg-gray-800/50 transition-colors"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-600/20 text-amber-400 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/20 text-gold mb-4">
                   {benefit.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-emerald-200 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -215,18 +215,18 @@ export default async function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gold">
             Ready to Elevate Your Cooking?
           </h2>
-          <p className="mt-3 text-gray-500 max-w-xl mx-auto">
+          <p className="mt-3 text-gray-400 max-w-xl mx-auto">
             Browse our full collection of premium spices and bring authentic flavor
             to every dish.
           </p>
           <Link
             href="/products"
-            className="mt-8 inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
+            className="mt-8 inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-10 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
           >
             Shop Now
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

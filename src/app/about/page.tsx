@@ -47,12 +47,12 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white py-20 sm:py-28">
+      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold">
-            About <span className="text-amber-400">Aura Foods</span>
+            About <span className="text-gold">Aura Foods</span>
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-emerald-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             From the heart of Sindh to kitchens across Pakistan — our journey is
             rooted in a passion for pure, authentic spices.
           </p>
@@ -64,10 +64,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gold">
                 Our Story
               </h2>
-              <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <div className="mt-6 space-y-4 text-gray-400 leading-relaxed">
                 <p>
                   Aura Foods was born from a simple belief: that the best spices
                   come from the earth, cultivated with care, and delivered with
@@ -108,13 +108,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gold">
               Our Mission & Values
             </h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
               Every spice we offer is a reflection of our dedication to purity,
               authenticity, and excellence.
             </p>
@@ -123,15 +123,15 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-gray-900 rounded-xl border border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/20 text-gold mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-100 mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -143,12 +143,12 @@ export default function AboutPage() {
       {/* Quality Section */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-950 rounded-2xl p-8 sm:p-12 text-white">
+          <div className="bg-gray-950 rounded-2xl p-8 sm:p-12 text-white border border-gray-800">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gold">
                 Our Commitment to Quality
               </h2>
-              <p className="mt-4 text-emerald-200 leading-relaxed">
+              <p className="mt-4 text-gray-400 leading-relaxed">
                 At Aura Foods, quality is not just a word — it is the foundation
                 of everything we do. From sourcing and processing to packaging
                 and delivery, every step is guided by rigorous quality controls.
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   <li key={item} className="flex items-start gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-amber-400 shrink-0 mt-0.5"
+                      className="h-6 w-6 text-gold shrink-0 mt-0.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-emerald-100">{item}</span>
+                    <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -184,18 +184,18 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-gold">
             Experience the Aura Foods Difference
           </h2>
-          <p className="mt-3 text-gray-500 max-w-xl mx-auto">
+          <p className="mt-3 text-gray-400 max-w-xl mx-auto">
             Discover our full range of premium spices and bring authentic flavor
             to your kitchen.
           </p>
           <Link
             href="/products"
-            className="mt-8 inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
+            className="mt-8 inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black px-10 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
           >
             Browse Products
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
