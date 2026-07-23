@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  password    String
+  name        String
+  role        String    @default("Viewer") // SuperAdmin, Admin, InventoryStaff, SalesStaff, Viewer
+  phone       String    @default("")
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  inventoryTransactions InventoryTransaction[]
+  orders                Order[]
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String    @unique
+  description String   @default("")
+  image     String    @default("")
+  sortOrder Int       @default(0)
+  isActive  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  products Product[]
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  sku         String    @unique
+  name        String
+  slug        String    @unique
+  tagline     String    @default("")
+  description String    @default("")
+  ingredients String    @default("")
+  usage       String    @default("")
+  price       Float     @default(0)
+  oldPrice    Float     @default(0)
+  weight      String    @default("")
+  unit        String    @default("")
+  isActive    Boolean   @default(true)
+  isFeatured  Boolean   @default(false)
+  isBestSeller Boolean  @default(false)
+  isNewArrival Boolean  @default(false)
+  categoryId  Int?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  category              Category?              @relation(fields: [categoryId], references: [id])
+  images                ProductImage[]
+  inventoryStock        InventoryStock?
+  inventoryTransactions InventoryTransaction[]
+  orderItems            OrderItem[]
+  cartItems             CartItem[]
+}
+
+model ProductImage {
+  id        Int      @id @default(autoincrement())
+  productId Int
+  url       String
+  alt       String   @default("")
+  isPrimary Boolean  @default(false)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model InventoryStock {
+  id             Int      @id @default(autoincrement())
+  productId      Int      @unique
+  quantity       Float    @default(0)
+  lowStockThreshold Float @default(10)
+  updatedAt      DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model InventoryTransaction {
+  id          Int      @id @default(autoincrement())
+  productId   Int
+  userId      Int?
+  type        String   // STOCK_IN, STOCK_OUT, ADJUSTMENT, SALE, RETURN
+  quantity    Float
+  reference   String   @default("")
+  notes       String   @default("")
+  createdAt   DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id])
+  user    User?   @relation(fields: [userId], references: [id])
+}
+
+model Customer {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String   @default("")
+  phone      String   @default("")
+  address    String   @default("")
+  city       String   @default("")
+  notes      String   @default("")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  orders Order[]
+}
+
+model Order {
+  id            Int       @id @default(autoincrement())
+  orderNumber   String    @unique
+  customerId    Int?
+  userId        Int?
+  status        String    @default("Pending") // Pending, Confirmed, Processing, Dispatched, Delivered, Cancelled
+  subtotal      Float     @default(0)
+  deliveryCharge Float    @default(0)
+  total         Float     @default(0)
+  notes         String    @default("")
+  customerName  String    @default("")
+  customerEmail String    @default("")
+  customerPhone String    @default("")
+  customerAddress String  @default("")
+  customerCity  String    @default("")
+  isManualOrder Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  customer Customer? @relation(fields: [customerId], references: [id])
+  user     User?     @relation(fields: [userId], references: [id])
+  items    OrderItem[]
+}
+
+model OrderItem {
+  id        Int      @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int      @default(1)
+  unitPrice Float    @default(0)
+  totalPrice Float   @default(0)
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  sessionId String
+  productId Int
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model Setting {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String @default("")
+}
