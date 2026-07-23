@@ -44,10 +44,8 @@ export default function Navbar() {
   return (
     <nav className="navbar" role="navigation" aria-label="Main navigation" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, background: 'rgba(10,10,10,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
       <div className="nav-container" style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 90 }}>
-        <Link href="/" className="nav-logo" aria-label="Aura Foods Home" style={{ display: 'flex', alignItems: 'center', gap: '.5rem', textDecoration: 'none', color: 'var(--cream)', fontWeight: 700, letterSpacing: '-.02em' }}>
-          <span className="logo-text" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem' }}>
-            Aura Foods<small style={{ fontSize: '.65rem', fontWeight: 400, letterSpacing: '.15em', marginLeft: 4, opacity: .7 }}>since 2020</small>
-          </span>
+        <Link href="/" className="nav-logo" aria-label="Aura Foods Home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <img src="/images/brand/logo.png" alt="Aura Foods" style={{ height: 48, width: 'auto' }} />
         </Link>
 
         <button className="nav-toggle md:hidden" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)} style={{ display: 'flex', flexDirection: 'column', gap: 5, background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
