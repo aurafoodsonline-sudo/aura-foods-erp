@@ -1,6 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaLibSql } from "@prisma/adapter-libsql";
 
+// Ensure Linux native binary is included in the bundle for Netlify
+if (process.env.NETLIFY) {
+  try { require("@libsql/linux-x64-gnu") } catch {}
+}
+
 function createPrismaClient() {
   const tursoUrl = process.env.TURSO_DB_URL;
   const tursoToken = process.env.TURSO_AUTH_TOKEN;
