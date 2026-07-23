@@ -23,18 +23,20 @@ export default async function HomePage() {
   ]);
 
   const testimonials = [
-    { name: 'Fatima A.', city: 'Karachi', text: 'The red chili powder from Kunri is absolutely incredible. You can taste the difference — it\'s so fresh and aromatic. Aura Foods has become my go-to for all spices.', initials: 'FA' },
-    { name: 'Ahmed R.', city: 'Lahore', text: 'Finally, a brand that delivers authentic, unadulterated spices. The turmeric is beautifully golden and fragrant. Highly recommended for anyone who loves real flavor.', initials: 'AR' },
-    { name: 'Sana K.', city: 'Islamabad', text: 'I love the attention to quality. The packaging is hygienic, delivery is always on time, and the spices taste like they were just ground. Truly premium!', initials: 'SK' },
+    { name: 'Ayesha K.', city: 'Karachi', text: 'The Kunri chili is unreal — the colour, the aroma, exactly what my mother used to buy from the village.', initials: 'AK' },
+    { name: 'Bilal R.', city: 'Lahore', text: 'Switched my whole pantry to Aura. The garam masala makes a difference you can smell from the next room.', initials: 'BR' },
+    { name: 'Sana M.', city: 'Islamabad', text: 'Beautifully packed, super fresh, and delivered in two days. The biryani masala is restaurant-grade.', initials: 'SM' },
+    { name: 'Tariq A.', city: 'Rawalpindi', text: 'Ordered the BBQ bundle for a family gathering. Everyone asked where I got the spices!', initials: 'TA' },
+    { name: 'Fatima Z.', city: 'Faisalabad', text: 'Finally, organic spices I can trust. My children\'s food is now completely preservative-free.', initials: 'FZ' },
   ];
 
   const whyItems = [
-    { title: '100% Organic', desc: 'Certified pure — no chemicals, additives, or shortcuts. Just spice as nature intended.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
-    { title: 'Hand-sourced', desc: 'We partner directly with family farms in Sindh. Every batch is traceable to its grower.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
-    { title: 'No Preservatives', desc: 'No artificial colours, flavours, or preservatives. Pure spice, full stop.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
-    { title: 'Stone-ground Fresh', desc: 'Cold stone-grinding preserves essential oils, giving you spices that taste like they were just made.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
-    { title: 'Triple-cleaned', desc: 'Every batch goes through a rigorous cleaning process — stones, stems, and dust are all removed.', svg: '<path d="M3 3h18v18H3V3z"/>' },
-    { title: 'Pakistan-wide Delivery', desc: 'We deliver to every city in Pakistan. Fresh stock reaches your doorstep within days.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+    { title: '100% Organic', desc: 'Sourced from trusted Pakistani farms without synthetic chemicals.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+    { title: 'No Preservatives', desc: 'Nothing artificial added. Ever. Just pure spice.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
+    { title: 'No Artificial Colors', desc: 'Pure pigment comes from the spice itself, not chemicals.', svg: '<path d="M3 3h18v18H3V3z"/>' },
+    { title: 'Hygienically Packed', desc: 'Sealed in food-grade facilities with strict quality control.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
+    { title: 'Fast Delivery', desc: 'Across Pakistan in 2-4 business days. Track your order.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+    { title: 'Fresh Aroma', desc: 'Ground in small batches weekly to preserve essential oils.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
   ];
 
   return (
@@ -63,10 +65,6 @@ export default async function HomePage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </Link>
               <Link href="/about" className="btn-secondary">Our Story</Link>
-              <Link href="/products" className="btn-ghost">
-                Explore Products
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </Link>
             </div>
             <div className="hero-features" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginTop: '3rem' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.75rem', color: 'rgba(250,247,242,0.65)' }}>
@@ -91,7 +89,7 @@ export default async function HomePage() {
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Shop by Category</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Crafted Collections</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends &mdash; explore our curated spice families.</p>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — explore our curated spice families.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} itemProp="itemListElement">
           {categories.map((cat: any) => (
