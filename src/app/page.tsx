@@ -23,20 +23,20 @@ export default async function HomePage() {
   ]);
 
   const testimonials = [
-    { name: 'Ayesha K.', city: 'Karachi', text: 'The Kunri chili is unreal — the colour, the aroma, exactly what my mother used to buy from the village.', initials: 'AK' },
-    { name: 'Bilal R.', city: 'Lahore', text: 'Switched my whole pantry to Aura. The garam masala makes a difference you can smell from the next room.', initials: 'BR' },
-    { name: 'Sana M.', city: 'Islamabad', text: 'Beautifully packed, super fresh, and delivered in two days. The biryani masala is restaurant-grade.', initials: 'SM' },
-    { name: 'Tariq A.', city: 'Rawalpindi', text: 'Ordered the BBQ bundle for a family gathering. Everyone asked where I got the spices!', initials: 'TA' },
-    { name: 'Fatima Z.', city: 'Faisalabad', text: 'Finally, organic spices I can trust. My children\'s food is now completely preservative-free.', initials: 'FZ' },
+    { name: 'Ayesha K.', city: 'Karachi', text: 'The Kunri chilli is extraordinary — the colour, the aroma, it takes me back to my mother\'s kitchen in the village.', initials: 'AK' },
+    { name: 'Bilal R.', city: 'Lahore', text: 'I\'ve converted my entire pantry to Aura. The garam masala announces itself the moment you open the jar.', initials: 'BR' },
+    { name: 'Sana M.', city: 'Islamabad', text: 'Impeccably packed, exceptionally fresh, and at my doorstep in two days. The biryani masala rivals any restaurant.', initials: 'SM' },
+    { name: 'Tariq A.', city: 'Rawalpindi', text: 'Ordered the BBQ ensemble for a family gathering — every guest asked where I\'d discovered these spices.', initials: 'TA' },
+    { name: 'Fatima Z.', city: 'Faisalabad', text: 'At last, organic spices I can trust without reservation. My family\'s meals are now entirely preservative-free.', initials: 'FZ' },
   ];
 
   const whyItems = [
-    { title: '100% Organic', desc: 'Sourced from trusted Pakistani farms, free from synthetic chemicals.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
-    { title: 'No Preservatives', desc: 'Nothing artificial added — ever. Just pure, unadulterated spice.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
-    { title: 'No Artificial Colors', desc: 'Every hue comes from the spice itself, never from chemicals.', svg: '<path d="M3 3h18v18H3V3z"/>' },
-    { title: 'Hygienically Sealed', desc: 'Sealed in food-grade facilities under rigorous quality control.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
-    { title: 'Express Delivery', desc: 'Across Pakistan within 2-4 business days, with real-time tracking.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-    { title: 'Fresh Aroma', desc: 'Ground in small batches each week to preserve volatile oils and aroma.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
+    { title: '100% Organic', desc: 'Sourced exclusively from trusted Pakistani farms, untouched by synthetic chemicals.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+    { title: 'No Preservatives', desc: 'Nothing artificial added — ever. Only pure, unadulterated spice.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
+    { title: 'No Artificial Colours', desc: 'Every hue is born of the spice itself — never from artificial agents.', svg: '<path d="M3 3h18v18H3V3z"/>' },
+    { title: 'Hygienically Sealed', desc: 'Sealed in certified facilities under exacting quality standards.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
+    { title: 'Expedited Delivery', desc: 'Delivered across Pakistan within 2-4 business days, with real-time tracking.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+    { title: 'Fresh Aroma', desc: 'Small-batch ground each week to preserve delicate volatile oils and robust fragrance.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
   ];
 
   return (
@@ -51,20 +51,20 @@ export default async function HomePage() {
           <div className="hero-text fade-up" style={{ maxWidth: 640 }}>
             <span className="hero-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '.5rem', fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)', marginBottom: '1.5rem' }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
-              Artisan-Sourced · Stone-Ground · Freshly Packed
+              Hand-Selected · Stone-Ground · Artisan-Packed
             </span>
             <h1 className="hero-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--cream)', textWrap: 'balance' }}>
               Pure & Premium <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Organic Spices</em> from Pakistan
             </h1>
             <p className="hero-subtitle" style={{ fontSize: 'clamp(.9375rem, 1.2vw, 1.125rem)', color: 'rgba(250,247,242,0.75)', marginTop: '1.5rem', maxWidth: 560, lineHeight: 1.7 }}>
-              Freshly packed, authentic spices from the fields of Sindh, delivered across Pakistan. Experience the heritage in every pinch.
+              Hand-selected, authentically crafted spices from the sun-ripened fields of Sindh, delivered with care across Pakistan. Savour the legacy in every grain.
             </p>
             <div className="hero-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginTop: '2.5rem' }}>
               <Link href="/products" className="btn-primary">
-                Shop Now
+                Explore the Collection
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </Link>
-              <Link href="/about" className="btn-secondary">Our Story</Link>
+              <Link href="/about" className="btn-secondary">Discover Our Heritage</Link>
             </div>
             <div className="hero-features" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginTop: '3rem' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.75rem', color: 'rgba(250,247,242,0.65)' }}>
@@ -73,7 +73,7 @@ export default async function HomePage() {
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.75rem', color: 'rgba(250,247,242,0.65)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" style={{ color: 'var(--gold)' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                No Preservatives
+                Preservative-Free
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.75rem', color: 'rgba(250,247,242,0.65)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" style={{ color: 'var(--gold)' }}><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -88,8 +88,8 @@ export default async function HomePage() {
       <section className="section" itemScope itemType="https://schema.org/ItemList">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Browse by Category</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Collections</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — discover our carefully curated spice families.</p>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>The Aura Collection</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — discover our meticulously curated selection of spice collections.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} itemProp="itemListElement">
           {categories.map((cat: any) => (
@@ -112,9 +112,9 @@ export default async function HomePage() {
       <section className="section-muted" style={{ padding: '5rem 1.5rem', background: 'rgba(74,103,65,0.05)' }} itemScope itemType="https://schema.org/ItemList">
         <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
           <div className="section-header-left fade-up" style={{ textAlign: 'left', margin: '0 0 3.5rem' }}>
-            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Best Sellers</div>
-            <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Trusted by Pakistani Kitchens</h2>
-            <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The pantry staples our customers return to, time and again.</p>
+            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Signature Selection</div>
+            <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Adored by Discerning Kitchens Across Pakistan</h2>
+            <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The essentials our patrons return to, time and again.</p>
           </div>
           <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} itemProp="itemListElement">
             {bestSellers.length > 0 ? bestSellers.map((product: any) => (
@@ -145,9 +145,9 @@ export default async function HomePage() {
       {/* Why Aura Foods — A Promise You Can Taste */}
       <section className="section">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Why Aura Foods</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>A Promise You Can Taste</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six principles that define every jar we deliver.</p>
+          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Aura Distinction</div>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>A Standard You Can Taste</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six hallmarks of excellence in every jar we present.</p>
         </div>
         <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
           {whyItems.map((item) => (
@@ -176,19 +176,19 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="story-content fade-up">
-            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Quality Commitment</div>
+            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Quality Legacy</div>
             <h2 className="story-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', lineHeight: 1.1, marginTop: '.75rem' }}>
-              From Sindh Soil to <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Your Spice Rack</em>
+              From the Soil of Sindh to <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Your Kitchen</em>
             </h2>
             <p className="story-text" style={{ color: 'rgba(250,247,242,0.7)', lineHeight: 1.8, marginTop: '1.25rem' }}>
-              Every spice we offer is traceable to the family farms of Kunri — the chilli capital of Asia. Each batch is sun-dried, hand-cleaned, stone-ground, and sealed within days, never months.
+              Every spice we offer is traceable to the family-owned farms of Kunri — the chilli capital of Asia. Each harvest is sun-dried, hand-sorted, stone-ground, and sealed within days, never months.
             </p>
             <div className="story-list" style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { title: 'Heritage Sourcing', desc: 'Direct, longstanding partnerships with Sindh growers.' },
-                { title: 'Triple-Stage Cleaning', desc: 'Stones, stems, and dust — meticulously removed.' },
-                { title: 'Cold Stone-Grinding', desc: 'Preserves delicate volatile oils and robust aroma.' },
-                { title: 'Hygienic Packaging', desc: 'Sealed in certified food-grade facilities.' },
+                { title: 'Heritage Sourcing', desc: 'Enduring, direct partnerships with fifth-generation Sindh growers.' },
+                { title: 'Triple-Stage Purification', desc: 'Stones, stems, and impurities — meticulously removed by hand and machine.' },
+                { title: 'Cold Stone-Grinding', desc: 'Preserves precious volatile oils and unlocks the spice\'s full aromatic depth.' },
+                { title: 'Hygienic Packaging', desc: 'Sealed in certified, food-grade facilities under stringent protocols.' },
               ].map((item) => (
                 <div key={item.title} className="story-list-item" style={{ display: 'flex', gap: '1rem' }}>
                   <div className="story-dot" style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--gold)', marginTop: '.45rem', flexShrink: 0 }} />
@@ -206,9 +206,9 @@ export default async function HomePage() {
       {/* Customer Love — Trusted Across Pakistan */}
       <section className="section">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Testimonials</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Trusted Across Pakistan</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Genuine feedback from real kitchens.</p>
+          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>From Our Patrons</div>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Revered Across Pakistan</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Unvarnished praise from kitchens that demand the finest.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {testimonials.map((t) => (
@@ -235,8 +235,8 @@ export default async function HomePage() {
       <section className="section" itemScope itemType="https://schema.org/Blog">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Journal</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Stories from the Kitchen</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Insights, recipes, and stories from Pakistan&apos;s spice heartland.</p>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Notes from the Kitchen</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Culinary insights, heirloom recipes, and dispatches from Pakistan&apos;s spice heartland.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
@@ -284,8 +284,8 @@ export default async function HomePage() {
           <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
             <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
               <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Bundle Offers</div>
-              <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Combos, Exceptional Value</h2>
-              <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Enjoy greater value when you stock up on essentials.</p>
+              <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Ensembles, Unrivalled Value</h2>
+              <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Elevate your pantry while enjoying preferential pricing.</p>
             </div>
             <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {bundles.map((bundle: any) => (
@@ -298,7 +298,7 @@ export default async function HomePage() {
                   {bundle.image && (
                     <img src={bundle.image} alt={`${bundle.name} — Aura Foods spice bundle`} style={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: 8, marginBottom: '.75rem' }} loading="lazy" />
                   )}
-                  <div className="bundle-label" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.25em', color: 'var(--gold)' }}>Bundle</div>
+                  <div className="bundle-label" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.25em', color: 'var(--gold)' }}>Ensemble</div>
                   <h3 className="bundle-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', marginTop: '.75rem' }}>{bundle.name}</h3>
                   <p className="bundle-items" style={{ fontSize: '.875rem', opacity: .65, marginTop: '.5rem' }}>{bundle._count.items} items</p>
                   <div className="bundle-price-row" style={{ display: 'flex', alignItems: 'flex-end', gap: '.75rem', marginTop: '2rem' }}>
@@ -308,7 +308,7 @@ export default async function HomePage() {
                     )}
                   </div>
                   <span className="bundle-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '.5rem', color: 'var(--gold)', fontSize: '.875rem', fontWeight: 600, textDecoration: 'none', marginTop: '1.5rem', transition: 'gap .3s' }}>
-                    Shop the Bundle
+                    Acquire the Ensemble
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </span>
                 </Link>
