@@ -31,12 +31,12 @@ export default async function HomePage() {
   ];
 
   const whyItems = [
-    { title: '100% Organic', desc: 'Sourced from trusted Pakistani farms without synthetic chemicals.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
-    { title: 'No Preservatives', desc: 'Nothing artificial added. Ever. Just pure spice.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
-    { title: 'No Artificial Colors', desc: 'Pure pigment comes from the spice itself, not chemicals.', svg: '<path d="M3 3h18v18H3V3z"/>' },
-    { title: 'Hygienically Packed', desc: 'Sealed in food-grade facilities with strict quality control.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
-    { title: 'Fast Delivery', desc: 'Across Pakistan in 2-4 business days. Track your order.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-    { title: 'Fresh Aroma', desc: 'Ground in small batches weekly to preserve essential oils.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
+    { title: '100% Organic', desc: 'Sourced from trusted Pakistani farms, free from synthetic chemicals.', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+    { title: 'No Preservatives', desc: 'Nothing artificial added — ever. Just pure, unadulterated spice.', svg: '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' },
+    { title: 'No Artificial Colors', desc: 'Every hue comes from the spice itself, never from chemicals.', svg: '<path d="M3 3h18v18H3V3z"/>' },
+    { title: 'Hygienically Sealed', desc: 'Sealed in food-grade facilities under rigorous quality control.', svg: '<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>' },
+    { title: 'Express Delivery', desc: 'Across Pakistan within 2-4 business days, with real-time tracking.', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+    { title: 'Fresh Aroma', desc: 'Ground in small batches each week to preserve volatile oils and aroma.', svg: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>' },
   ];
 
   return (
@@ -51,13 +51,13 @@ export default async function HomePage() {
           <div className="hero-text fade-up" style={{ maxWidth: 640 }}>
             <span className="hero-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '.5rem', fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)', marginBottom: '1.5rem' }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
-              Hand-sourced · Stone-ground · Freshly packed
+              Artisan-Sourced · Stone-Ground · Freshly Packed
             </span>
             <h1 className="hero-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', lineHeight: 1.05, color: 'var(--cream)', textWrap: 'balance' }}>
               Pure & Premium <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Organic Spices</em> from Pakistan
             </h1>
             <p className="hero-subtitle" style={{ fontSize: 'clamp(.9375rem, 1.2vw, 1.125rem)', color: 'rgba(250,247,242,0.75)', marginTop: '1.5rem', maxWidth: 560, lineHeight: 1.7 }}>
-              Freshly packed authentic spices from the fields of Sindh, delivered across Pakistan. Taste the heritage in every pinch.
+              Freshly packed, authentic spices from the fields of Sindh, delivered across Pakistan. Experience the heritage in every pinch.
             </p>
             <div className="hero-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginTop: '2.5rem' }}>
               <Link href="/products" className="btn-primary">
@@ -77,7 +77,7 @@ export default async function HomePage() {
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.75rem', color: 'rgba(250,247,242,0.65)' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" style={{ color: 'var(--gold)' }}><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                Pakistan-wide Delivery
+                Nationwide Delivery
               </span>
             </div>
           </div>
@@ -87,9 +87,9 @@ export default async function HomePage() {
       {/* Shop by Category — Crafted Collections */}
       <section className="section" itemScope itemType="https://schema.org/ItemList">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Shop by Category</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Crafted Collections</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — explore our curated spice families.</p>
+          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Browse by Category</div>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Collections</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — discover our carefully curated spice families.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} itemProp="itemListElement">
           {categories.map((cat: any) => (
@@ -99,7 +99,7 @@ export default async function HomePage() {
               <div className="category-name" style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '1.5rem' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem' }}>{cat.name}</h3>
                 <span style={{ fontSize: '.75rem', color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: '.35rem', marginTop: '.25rem', transition: 'gap .3s' }}>
-                  Shop now
+                  Explore
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
               </div>
@@ -113,8 +113,8 @@ export default async function HomePage() {
         <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
           <div className="section-header-left fade-up" style={{ textAlign: 'left', margin: '0 0 3.5rem' }}>
             <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Best Sellers</div>
-            <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Loved in Pakistani Kitchens</h2>
-            <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The pantry staples our customers reorder again and again.</p>
+            <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Trusted by Pakistani Kitchens</h2>
+            <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The pantry staples our customers return to, time and again.</p>
           </div>
           <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} itemProp="itemListElement">
             {bestSellers.length > 0 ? bestSellers.map((product: any) => (
@@ -147,7 +147,7 @@ export default async function HomePage() {
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Why Aura Foods</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>A Promise You Can Taste</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six commitments that shape every jar we deliver.</p>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six principles that define every jar we deliver.</p>
         </div>
         <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
           {whyItems.map((item) => (
@@ -176,19 +176,19 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="story-content fade-up">
-            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Quality Promise</div>
+            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Quality Commitment</div>
             <h2 className="story-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', lineHeight: 1.1, marginTop: '.75rem' }}>
               From Sindh Soil to <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Your Spice Rack</em>
             </h2>
             <p className="story-text" style={{ color: 'rgba(250,247,242,0.7)', lineHeight: 1.8, marginTop: '1.25rem' }}>
-              We trace every spice back to the family farms of Kunri — the chili capital of Asia. Each batch is sun-dried, hand-cleaned, stone-ground, and sealed within days, never months.
+              Every spice we offer is traceable to the family farms of Kunri — the chilli capital of Asia. Each batch is sun-dried, hand-cleaned, stone-ground, and sealed within days, never months.
             </p>
             <div className="story-list" style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { title: 'Heritage sourcing', desc: 'Direct partnerships with Sindh growers.' },
-                { title: 'Triple-stage cleaning', desc: 'Stones, stems and dust — all removed.' },
-                { title: 'Cold stone-grinding', desc: 'Preserves volatile oils and aroma.' },
-                { title: 'Hygienic packaging', desc: 'Sealed in food-grade facilities.' },
+                { title: 'Heritage Sourcing', desc: 'Direct, longstanding partnerships with Sindh growers.' },
+                { title: 'Triple-Stage Cleaning', desc: 'Stones, stems, and dust — meticulously removed.' },
+                { title: 'Cold Stone-Grinding', desc: 'Preserves delicate volatile oils and robust aroma.' },
+                { title: 'Hygienic Packaging', desc: 'Sealed in certified food-grade facilities.' },
               ].map((item) => (
                 <div key={item.title} className="story-list-item" style={{ display: 'flex', gap: '1rem' }}>
                   <div className="story-dot" style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--gold)', marginTop: '.45rem', flexShrink: 0 }} />
@@ -206,9 +206,9 @@ export default async function HomePage() {
       {/* Customer Love — Trusted Across Pakistan */}
       <section className="section">
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Customer Love</div>
+          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Testimonials</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Trusted Across Pakistan</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Real reviews from real kitchens.</p>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Genuine feedback from real kitchens.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {testimonials.map((t) => (
@@ -236,7 +236,7 @@ export default async function HomePage() {
         <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Journal</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Stories from the Kitchen</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Tips, recipes, and tales from Pakistan&apos;s spice heartland.</p>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Insights, recipes, and stories from Pakistan&apos;s spice heartland.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
@@ -284,8 +284,8 @@ export default async function HomePage() {
           <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
             <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
               <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Bundle Offers</div>
-              <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Combos, Better Value</h2>
-              <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Save more when you stock up on the essentials.</p>
+              <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Combos, Exceptional Value</h2>
+              <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Enjoy greater value when you stock up on essentials.</p>
             </div>
             <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {bundles.map((bundle: any) => (
@@ -308,7 +308,7 @@ export default async function HomePage() {
                     )}
                   </div>
                   <span className="bundle-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '.5rem', color: 'var(--gold)', fontSize: '.875rem', fontWeight: 600, textDecoration: 'none', marginTop: '1.5rem', transition: 'gap .3s' }}>
-                    Shop the bundle
+                    Shop the Bundle
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                   </span>
                 </Link>
