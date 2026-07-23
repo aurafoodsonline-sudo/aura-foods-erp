@@ -46,7 +46,7 @@ export default function SalesReportPage() {
         <div className="flex gap-4 items-end flex-wrap">
           <div><label className="block text-sm text-gray-500 mb-1">From</label><input type="date" value={from} onChange={e => setFrom(e.target.value)} className="border rounded px-3 py-1.5" /></div>
           <div><label className="block text-sm text-gray-500 mb-1">To</label><input type="date" value={to} onChange={e => setTo(e.target.value)} className="border rounded px-3 py-1.5" /></div>
-          <button onClick={loadReport} className="bg-emerald-700 text-white px-4 py-1.5 rounded hover:bg-emerald-800">Apply</button>
+          <button onClick={loadReport} className="bg-gold text-black px-4 py-1.5 rounded hover:bg-gold-light">Apply</button>
         </div>
       </div>
       {loading ? <div className="p-8 text-center text-gray-400">Loading...</div> : data && (

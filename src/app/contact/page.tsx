@@ -56,8 +56,9 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/products/bundle_15.jpg')] bg-cover bg-center opacity-10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Contact Us</h1>
           <p className="mt-2 text-gray-300">
             We&apos;d love to hear from you. Get in touch with us.
@@ -69,6 +70,13 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div>
+            <div className="rounded-xl overflow-hidden mb-8">
+              <img
+                src="/images/products/bundle_15.jpg"
+                alt="Aura Foods premium spice collection"
+                className="w-full h-64 object-cover"
+              />
+            </div>
             <h2 className="text-2xl font-bold text-gold mb-6">
               Get in Touch
             </h2>

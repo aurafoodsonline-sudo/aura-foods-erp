@@ -62,7 +62,7 @@ export default function AdminCategoriesPage() {
       <div className="bg-white rounded-lg shadow p-4 mb-6">
         <div className="flex gap-2">
           <input value={newName} onChange={e => setNewName(e.target.value)} placeholder="New category name" className="border rounded px-3 py-2 flex-1" onKeyDown={e => e.key === "Enter" && addCategory()} />
-          <button onClick={addCategory} className="bg-emerald-700 text-white px-4 py-2 rounded hover:bg-emerald-800">Add</button>
+          <button onClick={addCategory} className="bg-gold text-black px-4 py-2 rounded hover:bg-gold-light">Add</button>
         </div>
       </div>
       <div className="bg-white rounded-lg shadow overflow-hidden">

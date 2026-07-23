@@ -116,7 +116,7 @@ export default function AdminProductsPage() {
           </div>
           <Link
             href="/admin/products/new"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-black hover:bg-gold-light rounded-lg text-sm font-medium transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -131,7 +131,7 @@ export default function AdminProductsPage() {
             placeholder="Search by name or SKU..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm"
+            className="flex-1 max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm"
           />
         </div>
 
@@ -177,7 +177,7 @@ export default function AdminProductsPage() {
                         <div className="flex items-center gap-2">
                           <Link
                             href={`/admin/products/${product.id}`}
-                            className="px-3 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-50 rounded-md transition-colors"
+                            className="px-3 py-1 text-xs font-medium text-gold hover:bg-gray-100 rounded-md transition-colors"
                           >
                             Edit
                           </Link>

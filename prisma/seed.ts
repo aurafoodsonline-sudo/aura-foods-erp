@@ -78,12 +78,12 @@ async function main() {
   // ─── Categories ────────────────────────────────────────────────────────────
   console.log("Creating categories...");
   const categoriesData = [
-    { name: "Red Chili Powder", slug: "red-chili-powder", description: "Premium quality red chili powder sourced from Kunri, Sindh — known as the chili capital of Pakistan.", sortOrder: 1 },
-    { name: "Turmeric Powder", slug: "turmeric-powder", description: "Pure and aromatic turmeric powder made from handpicked turmeric roots.", sortOrder: 2 },
-    { name: "Coriander Powder", slug: "coriander-powder", description: "Freshly ground coriander powder with an authentic aroma and flavor.", sortOrder: 3 },
-    { name: "Garam Masala", slug: "garam-masala", description: "Signature blend of hand-roasted spices ground to perfection.", sortOrder: 4 },
-    { name: "Premium Blends", slug: "premium-blends", description: "Curated spice blends for every palate and occasion.", sortOrder: 5 },
-    { name: "Salt Range", slug: "salt-range", description: "Pure and natural salts sourced from the finest mines.", sortOrder: 6 },
+    { name: "Red Chili Powder", slug: "red-chili-powder", description: "Premium quality red chili powder sourced from Kunri, Sindh — known as the chili capital of Pakistan.", image: "/images/products/category_1.jpg", sortOrder: 1 },
+    { name: "Turmeric Powder", slug: "turmeric-powder", description: "Pure and aromatic turmeric powder made from handpicked turmeric roots.", image: "/images/products/category_2.jpg", sortOrder: 2 },
+    { name: "Coriander Powder", slug: "coriander-powder", description: "Freshly ground coriander powder with an authentic aroma and flavor.", image: "/images/products/category_3.png", sortOrder: 3 },
+    { name: "Garam Masala", slug: "garam-masala", description: "Signature blend of hand-roasted spices ground to perfection.", image: "/images/products/garam.jpg", sortOrder: 4 },
+    { name: "Premium Blends", slug: "premium-blends", description: "Curated spice blends for every palate and occasion.", image: "/images/products/chaat.jpg", sortOrder: 5 },
+    { name: "Salt Range", slug: "salt-range", description: "Pure and natural salts sourced from the finest mines.", image: "/images/products/category_6.png", sortOrder: 6 },
   ];
 
   const categories = await prisma.$transaction(

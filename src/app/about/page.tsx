@@ -47,8 +47,9 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/products/hero-spices.jpg')] bg-cover bg-center opacity-10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold">
             About <span className="text-gold">Aura Foods</span>
           </h1>
@@ -96,12 +97,12 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-              <div className="aspect-[4/3] flex items-center justify-center text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="/images/products/story-en.jpg"
+                alt="Aura Foods story - premium spices from Pakistan"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
             </div>
           </div>
         </div>
@@ -143,7 +144,8 @@ export default function AboutPage() {
       {/* Quality Section */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-950 rounded-2xl p-8 sm:p-12 text-white border border-gray-800">
+          <div className="relative bg-gray-950 rounded-2xl p-8 sm:p-12 text-white border border-gray-800 overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/products/quality-story.jpg')] bg-cover bg-center opacity-10" />
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-gold">
                 Our Commitment to Quality

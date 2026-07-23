@@ -143,8 +143,9 @@ export default function CheckoutPage() {
   if (cartItems.length === 0) {
     return (
       <div>
-        <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/products/hero.jpg')] bg-cover bg-center opacity-10" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
           </div>
         </section>
@@ -182,8 +183,9 @@ export default function CheckoutPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 sm:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/products/hero.jpg')] bg-cover bg-center opacity-10" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold">Checkout</h1>
           <p className="mt-2 text-gray-300">
             Fill in your details to place your order.

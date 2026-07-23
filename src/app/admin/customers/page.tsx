@@ -47,7 +47,7 @@ export default function AdminCustomersPage() {
                   <td className="p-3 text-gray-500">{c.city || "-"}</td>
                   <td className="p-3">{c.orderCount || 0}</td>
                   <td className="p-3 font-medium">{c.totalSpent ? formatPrice(c.totalSpent) : "-"}</td>
-                  <td className="p-3"><Link href={`/admin/customers/${c.id}`} className="text-emerald-700 hover:underline text-sm">View</Link></td>
+                  <td className="p-3"><Link href={`/admin/customers/${c.id}`} className="text-gold hover:underline text-sm">View</Link></td>
                 </tr>
               ))}
             {!loading && filtered.length === 0 && <tr><td colSpan={7} className="p-8 text-center text-gray-400">No customers found</td></tr>}

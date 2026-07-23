@@ -146,51 +146,51 @@ export default function NewProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-              <input type="text" value={name} onChange={(e) => handleNameChange(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" required />
+              <input type="text" value={name} onChange={(e) => handleNameChange(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Slug</label>
-              <input type="text" value={slug} onChange={(e) => setSlug(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm bg-gray-50" />
+              <input type="text" value={slug} onChange={(e) => setSlug(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm bg-gray-50" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">SKU *</label>
-              <input type="text" value={sku} onChange={(e) => setSku(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" required />
+              <input type="text" value={sku} onChange={(e) => setSku(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Tagline</label>
-              <input type="text" value={tagline} onChange={(e) => setTagline(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" />
+              <input type="text" value={tagline} onChange={(e) => setTagline(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" />
             </div>
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
-              <textarea rows={3} value={description} onChange={(e) => setDescription(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" />
+              <textarea rows={3} value={description} onChange={(e) => setDescription(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" />
             </div>
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Ingredients</label>
-              <textarea rows={3} value={ingredients} onChange={(e) => setIngredients(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" />
+              <textarea rows={3} value={ingredients} onChange={(e) => setIngredients(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" />
             </div>
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Usage</label>
-              <textarea rows={3} value={usage} onChange={(e) => setUsage(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" />
+              <textarea rows={3} value={usage} onChange={(e) => setUsage(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Price (Rs.) *</label>
-              <input type="number" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" required />
+              <input type="number" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Old Price (Rs.)</label>
-              <input type="number" step="0.01" value={oldPrice} onChange={(e) => setOldPrice(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" />
+              <input type="number" step="0.01" value={oldPrice} onChange={(e) => setOldPrice(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Weight</label>
-              <input type="text" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" placeholder="e.g. 500g" />
+              <input type="text" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" placeholder="e.g. 500g" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Unit</label>
-              <input type="text" value={unit} onChange={(e) => setUnit(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" placeholder="e.g. pack, piece" />
+              <input type="text" value={unit} onChange={(e) => setUnit(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" placeholder="e.g. pack, piece" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
-              <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm">
+              <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm">
                 <option value="">No category</option>
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>{cat.name}</option>
@@ -203,15 +203,15 @@ export default function NewProductPage() {
             <label className="block text-sm font-medium text-gray-700 mb-2">Flags</label>
             <div className="flex flex-wrap gap-4">
               <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600" />
+                <input type="checkbox" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} className="rounded border-gray-300 text-gold focus:ring-gold" />
                 Featured
               </label>
               <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={isBestSeller} onChange={(e) => setIsBestSeller(e.target.checked)} className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600" />
+                <input type="checkbox" checked={isBestSeller} onChange={(e) => setIsBestSeller(e.target.checked)} className="rounded border-gray-300 text-gold focus:ring-gold" />
                 Best Seller
               </label>
               <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={isNewArrival} onChange={(e) => setIsNewArrival(e.target.checked)} className="rounded border-gray-300 text-emerald-700 focus:ring-emerald-600" />
+                <input type="checkbox" checked={isNewArrival} onChange={(e) => setIsNewArrival(e.target.checked)} className="rounded border-gray-300 text-gold focus:ring-gold" />
                 New Arrival
               </label>
             </div>
@@ -219,14 +219,14 @@ export default function NewProductPage() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Image URLs (one per line)</label>
-            <textarea rows={3} value={imageUrls} onChange={(e) => setImageUrls(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 outline-none text-sm" placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg" />
+            <textarea rows={3} value={imageUrls} onChange={(e) => setImageUrls(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm" placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg" />
           </div>
 
           <div className="flex items-center gap-3 pt-2">
             <button
               type="submit"
               disabled={saving}
-              className="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+              className="px-6 py-2 bg-gold text-black hover:bg-gold-light rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
             >
               {saving ? "Saving..." : "Create Product"}
             </button>

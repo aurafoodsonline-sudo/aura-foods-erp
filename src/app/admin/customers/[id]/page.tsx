@@ -47,7 +47,7 @@ export default function AdminCustomerDetailPage() {
         <div className="lg:col-span-2 bg-white rounded-lg shadow p-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold text-lg">Order History</h2>
-            <p className="text-gray-500">Total spent: <span className="font-bold text-emerald-700">{formatPrice(totalSpent)}</span></p>
+            <p className="text-gray-500">Total spent: <span className="font-bold text-gold">{formatPrice(totalSpent)}</span></p>
           </div>
           <table className="w-full">
             <thead><tr className="border-b text-sm text-gray-500">{["Order #", "Date", "Total", "Status", ""].map(h => <th key={h} className="text-left p-2 font-medium">{h}</th>)}</tr></thead>
@@ -58,7 +58,7 @@ export default function AdminCustomerDetailPage() {
                   <td className="p-2 text-sm text-gray-500">{formatDate(new Date(o.createdAt))}</td>
                   <td className="p-2 font-medium">{formatPrice(o.total)}</td>
                   <td className="p-2"><StatusBadge status={o.status} /></td>
-                  <td className="p-2"><Link href={`/admin/orders/${o.id}`} className="text-emerald-700 hover:underline text-sm">View</Link></td>
+                  <td className="p-2"><Link href={`/admin/orders/${o.id}`} className="text-gold hover:underline text-sm">View</Link></td>
                 </tr>
               ))}
               {customer.orders.length === 0 && <tr><td colSpan={5} className="p-4 text-center text-gray-400">No orders yet</td></tr>}

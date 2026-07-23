@@ -104,7 +104,7 @@ export default function AdminInventoryPage() {
             <input value={notes} onChange={e => setNotes(e.target.value)} placeholder="Notes (optional)" className="border rounded px-3 py-2 w-full mb-4" />
             <div className="flex gap-2 justify-end">
               <button onClick={() => setShowForm(null)} className="px-4 py-2 rounded border hover:bg-gray-50 text-sm">Cancel</button>
-              <button onClick={() => adjustStock(showForm.productId)} className="px-4 py-2 rounded bg-emerald-700 text-white text-sm hover:bg-emerald-800">Submit</button>
+              <button onClick={() => adjustStock(showForm.productId)} className="px-4 py-2 rounded bg-gold text-black text-sm hover:bg-gold-light">Submit</button>
             </div>
           </div>
         </div>

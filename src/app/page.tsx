@@ -59,7 +59,7 @@ export default async function HomePage() {
     <div>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5" />
+        <div className="absolute inset-0 bg-[url('/images/products/hero-spices.jpg')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
@@ -158,9 +158,9 @@ export default async function HomePage() {
               <Link
                 key={cat.id}
                 href={`/categories/${cat.slug}`}
-                className="group bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group bg-gray-900 rounded-lg border border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div className="aspect-square bg-gray-100 relative overflow-hidden">
+                <div className="aspect-square bg-gray-800 relative overflow-hidden">
                   {cat.image ? (
                     <img
                       src={cat.image}
@@ -168,7 +168,7 @@ export default async function HomePage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    <div className="w-full h-full flex items-center justify-center text-gray-500">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
@@ -176,7 +176,7 @@ export default async function HomePage() {
                   )}
                 </div>
                 <div className="p-3 text-center">
-                  <h3 className="text-sm font-semibold text-gray-900 group-hover:text-gold transition-colors">
+                  <h3 className="text-sm font-semibold text-gray-100 group-hover:text-gold transition-colors">
                     {cat.name}
                   </h3>
                 </div>
@@ -187,7 +187,8 @@ export default async function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 sm:py-20 bg-black text-white">
+      <section className="relative py-16 sm:py-20 bg-black text-white">
+        <div className="absolute inset-0 bg-[url('/images/products/bundle_7.jpg')] bg-cover bg-center opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold">Why Choose Aura Foods?</h2>

@@ -91,7 +91,7 @@ export default function AdminOrderDetailPage() {
               <select value={newStatus} onChange={e => setNewStatus(e.target.value)} className="border rounded px-2 py-1 text-sm flex-1">
                 {STATUSES.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
-              <button onClick={updateStatus} className="bg-emerald-700 text-white px-3 py-1 rounded text-sm hover:bg-emerald-800">Update</button>
+              <button onClick={updateStatus} className="bg-gold text-black px-3 py-1 rounded text-sm hover:bg-gold-light">Update</button>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow p-6">

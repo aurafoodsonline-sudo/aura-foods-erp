@@ -109,12 +109,12 @@ export default function AdminDashboardPage() {
   }
 
   const stats = [
-    { label: "Total Sales", value: formatPrice(data.totalSales), color: "text-emerald-700" },
+    { label: "Total Sales", value: formatPrice(data.totalSales), color: "text-gold" },
     { label: "Total Orders", value: data.totalOrders, color: "text-blue-700" },
     { label: "Pending Orders", value: data.pendingOrders, color: "text-amber-600" },
     { label: "Total Products", value: data.totalProducts, color: "text-indigo-700" },
     { label: "Total Categories", value: data.totalCategories, color: "text-purple-700" },
-    { label: "Inventory Value", value: formatPrice(data.inventoryValue), color: "text-emerald-700" },
+    { label: "Inventory Value", value: formatPrice(data.inventoryValue), color: "text-gold" },
     { label: "Total Customers", value: data.totalCustomers, color: "text-cyan-700" },
   ];
 

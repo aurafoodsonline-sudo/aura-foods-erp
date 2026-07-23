@@ -42,7 +42,7 @@ export default function AdminOrdersPage() {
       <h1 className="text-2xl font-bold mb-6">Orders</h1>
       <div className="flex gap-2 mb-4 flex-wrap">
         {STATUSES.map(s => (
-          <button key={s} onClick={() => setFilter(s)} className={`px-3 py-1.5 rounded text-sm font-medium ${filter === s ? "bg-emerald-700 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>{s}</button>
+          <button key={s} onClick={() => setFilter(s)} className={`px-3 py-1.5 rounded text-sm font-medium ${filter === s ? "bg-gold text-black" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>{s}</button>
         ))}
       </div>
       <div className="bg-white rounded-lg shadow overflow-hidden">
@@ -58,7 +58,7 @@ export default function AdminOrdersPage() {
                   <td className="p-3 font-medium">{formatPrice(o.total)}</td>
                   <td className="p-3"><StatusBadge status={o.status} /></td>
                   <td className="p-3 text-sm text-gray-500">{formatDate(new Date(o.createdAt))}</td>
-                  <td className="p-3"><Link href={`/admin/orders/${o.id}`} className="text-emerald-700 hover:underline text-sm">View</Link></td>
+                  <td className="p-3"><Link href={`/admin/orders/${o.id}`} className="text-gold hover:underline text-sm">View</Link></td>
                 </tr>
               ))}
             {!loading && orders.length === 0 && <tr><td colSpan={7} className="p-8 text-center text-gray-400">No orders found</td></tr>}
