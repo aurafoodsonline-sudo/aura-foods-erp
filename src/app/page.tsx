@@ -231,6 +231,53 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Journal — Stories from the Kitchen */}
+      <section className="section" itemScope itemType="https://schema.org/Blog">
+        <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Journal</div>
+          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Stories from the Kitchen</h2>
+          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Tips, recipes, and tales from Pakistan&apos;s spice heartland.</p>
+        </div>
+        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <div className="blog-card-img" style={{ height: 200, overflow: 'hidden' }}>
+              <img src="/images/products/turmeric.jpg" alt="The Health Benefits of Daily Turmeric — Aura Foods blog" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+            </div>
+            <div style={{ padding: '1.25rem' }}>
+              <div className="blog-card-meta" style={{ display: 'flex', gap: '.75rem', fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--muted)', marginBottom: '.5rem' }}>
+                <span className="blog-card-cat" style={{ color: 'var(--gold)' }}>Wellness</span>
+                <span>4 min read</span>
+              </div>
+              <h3 className="blog-card-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', lineHeight: 1.4 }}>The Health Benefits of Daily Turmeric</h3>
+            </div>
+          </div>
+          <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <div className="blog-card-img" style={{ height: 200, overflow: 'hidden' }}>
+              <img src="/images/products/bbq.jpg" alt="Best Spices for the Perfect BBQ Night — Aura Foods blog" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+            </div>
+            <div style={{ padding: '1.25rem' }}>
+              <div className="blog-card-meta" style={{ display: 'flex', gap: '.75rem', fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--muted)', marginBottom: '.5rem' }}>
+                <span className="blog-card-cat" style={{ color: 'var(--gold)' }}>Cooking</span>
+                <span>6 min read</span>
+              </div>
+              <h3 className="blog-card-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', lineHeight: 1.4 }}>Best Spices for the Perfect BBQ Night</h3>
+            </div>
+          </div>
+          <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <div className="blog-card-img" style={{ height: 200, overflow: 'hidden' }}>
+              <img src="/images/products/garam.jpg" alt="Inside Sindh: Pakistan's Spice Heritage — Aura Foods blog" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+            </div>
+            <div style={{ padding: '1.25rem' }}>
+              <div className="blog-card-meta" style={{ display: 'flex', gap: '.75rem', fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--muted)', marginBottom: '.5rem' }}>
+                <span className="blog-card-cat" style={{ color: 'var(--gold)' }}>Heritage</span>
+                <span>5 min read</span>
+              </div>
+              <h3 className="blog-card-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', lineHeight: 1.4 }}>Inside Sindh: Pakistan&apos;s Spice Heritage</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bundle Offers — Curated Combos, Better Value */}
       {bundles.length > 0 && (
         <section className="section-muted" style={{ padding: '5rem 1.5rem', background: 'rgba(74,103,65,0.05)' }}>
