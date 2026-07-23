@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2.5 border border-gray-700 rounded-lg bg-gray-800 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-colors text-gray-100 placeholder-gray-500"
-                placeholder="admin@aurafoods.com"
+                placeholder="aurafoodsonline@gmail.com"
               />
             </div>
 

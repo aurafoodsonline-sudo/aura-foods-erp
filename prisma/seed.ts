@@ -28,12 +28,12 @@ async function main() {
 
   // ─── Users ─────────────────────────────────────────────────────────────────
   console.log("Creating users...");
-  const adminPassword = await bcrypt.hash("Admin@12345", 12);
+  const adminPassword = await bcrypt.hash("aazmeer2010", 12);
   const staffPassword = await bcrypt.hash("Staff@12345", 12);
 
   const adminUser = await prisma.user.create({
     data: {
-      email: "admin@aurafoods.local",
+      email: "aurafoodsonline@gmail.com",
       password: adminPassword,
       name: "Admin User",
       role: "SuperAdmin",
