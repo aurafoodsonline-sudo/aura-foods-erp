@@ -32,8 +32,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --nav-height: 72px;
+  --logo-height: 38px;
+}
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: 90px;
+    --logo-height: 48px;
+  }
+}
+
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--nav-height, 72px);
 }
 
 .btn-primary {
