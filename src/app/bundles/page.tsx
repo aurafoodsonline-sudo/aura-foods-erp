@@ -27,7 +27,7 @@ export default async function BundlesPage() {
             <p style={{ color: 'var(--muted)' }}>Check back soon for exciting bundle deals.</p>
           </div>
         ) : (
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div className="grid-3">
             {bundles.map((bundle: any) => (
               <Link key={bundle.id} href={`/bundles/${bundle.slug}`} className="bundle-card" style={{ background: 'var(--ink)', color: 'var(--cream)', borderRadius: 8, padding: '2rem', position: 'relative', overflow: 'hidden', display: 'block', textDecoration: 'none', transition: 'all .3s' }}>
                 {bundle.oldPrice > bundle.price && (

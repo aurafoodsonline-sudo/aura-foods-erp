@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer" itemScope itemType="https://schema.org/Organization" style={{ background: 'var(--ink)', color: 'var(--cream)', padding: '4rem 1.5rem 2rem' }}>
       <div className="footer-container" style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '2.5rem' }}>
+        <div className="footer-grid">
           <div className="footer-brand">
             <p style={{ lineHeight: 1.7, opacity: .6, fontSize: '.875rem', marginBottom: '1rem' }}>
               Pure & Premium Organic Spices of Pakistan. From Sindh soil to your spice rack.

@@ -40,7 +40,7 @@ export default async function PriceListPage() {
                 {category.name}
               </h2>
               <div style={{ overflowX: 'auto', borderRadius: 8, border: '1px solid var(--border)' }}>
-                <table style={{ width: '100%', fontSize: '.875rem', borderCollapse: 'collapse' }}>
+                <table className="price-table" style={{ width: '100%', fontSize: '.875rem', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ background: 'rgba(10,10,10,0.03)', borderBottom: '1px solid var(--border)' }}>
                       <th style={{ textAlign: 'left', padding: '.75rem 1rem', fontWeight: 600, color: 'var(--muted)', fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.05em' }}>Product Name</th>

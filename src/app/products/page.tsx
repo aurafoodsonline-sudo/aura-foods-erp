@@ -48,7 +48,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         </p>
       </section>
 
-      <div className="shop-layout" style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: '2rem', maxWidth: 1280, margin: '0 auto', padding: '2rem 1.5rem' }}>
+      <div className="shop-layout" style={{ maxWidth: 1280, margin: '0 auto', padding: '2rem 1.5rem' }}>
         {/* Sidebar */}
         <aside className="shop-sidebar" style={{ padding: 0 }} aria-label="Filter by spice category">
           <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', marginBottom: '1rem' }}>Categories</h3>

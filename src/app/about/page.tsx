@@ -13,7 +13,7 @@ export default function AboutPage() {
 
       <div className="about-content" style={{ maxWidth: 1280, margin: '0 auto', padding: '4rem 1.5rem' }}>
         {/* About Grid */}
-        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="about-grid">
           <div className="about-text">
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', marginBottom: '1rem' }}>
               Rooted in Sindh, <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Trusted Everywhere</em>
@@ -25,7 +25,7 @@ export default function AboutPage() {
               We work directly with small family farms, ensuring fair prices and premium quality. Every batch is traceable back to its origin. Every jar contains spices that are sun-dried, hand-sorted, and stone-ground to preserve the natural oils and aroma.
             </p>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8 }}>No shortcuts. No additives. Just pure, honest spice that tastes like home.</p>
-            <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem', textAlign: 'center' }}>
+            <div className="stats-grid" style={{ marginTop: '3rem' }}>
               <div><div className="stat-number" style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', color: 'var(--gold)', fontWeight: 700 }}>8+</div><div className="stat-label" style={{ fontSize: '.8125rem', color: 'var(--muted)', marginTop: '.25rem' }}>Premium Products</div></div>
               <div><div className="stat-number" style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', color: 'var(--gold)', fontWeight: 700 }}>50+</div><div className="stat-label" style={{ fontSize: '.8125rem', color: 'var(--muted)', marginTop: '.25rem' }}>Partner Farms</div></div>
               <div><div className="stat-number" style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', color: 'var(--gold)', fontWeight: 700 }}>100%</div><div className="stat-label" style={{ fontSize: '.8125rem', color: 'var(--muted)', marginTop: '.25rem' }}>Organic Promise</div></div>
@@ -39,12 +39,12 @@ export default function AboutPage() {
         </div>
 
         {/* Values Section */}
-        <div className="section-header" style={{ textAlign: 'center', maxWidth: 560, margin: '5rem auto 3.5rem' }}>
+        <div className="section-header" style={{ marginTop: '5rem' }}>
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Our Values</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>What We Stand For</h2>
         </div>
 
-        <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+        <div className="about-values-grid">
           {[
             { title: 'Pure Quality', desc: 'We source directly from the finest growing regions. Every batch is tested for purity, ensuring you receive only the best.', svg: '<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>' },
             { title: 'Authentic Origin', desc: 'Our red chili comes from Kunri, Sindh — the chili capital of Pakistan. This region produces some of the most flavorful chilies in the world.', svg: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>' },

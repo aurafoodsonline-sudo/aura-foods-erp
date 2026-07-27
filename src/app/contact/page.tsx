@@ -56,7 +56,7 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page" style={{ padding: '8rem 1.5rem 3rem', maxWidth: 1280, margin: '0 auto' }}>
-      <div className="section-header" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 2rem' }}>
+      <div className="section-header">
         <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Get in Touch</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', marginTop: '.75rem' }}>We&apos;d Love to Hear From You</h1>
         <p style={{ color: 'var(--muted)', marginTop: '.75rem' }}>Questions, wholesale inquiries, or just want to say hello — drop us a message.</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
         </div>
       )}
 
-      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginTop: '2rem' }}>
+      <div className="contact-grid" style={{ marginTop: '2rem' }}>
         <div className="contact-info">
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.75rem' }}>Reach Out</h2>
           <p style={{ color: 'var(--muted)', marginTop: '.75rem', lineHeight: 1.7 }}>

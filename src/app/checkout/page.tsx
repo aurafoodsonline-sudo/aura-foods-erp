@@ -155,7 +155,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="checkout-page" style={{ padding: '8rem 1.5rem 3rem', maxWidth: 720, margin: '0 auto' }}>
-      <div className="breadcrumbs" style={{ display: 'flex', gap: '.5rem', fontSize: '.8125rem', color: 'var(--muted)', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+      <div className="breadcrumbs">
         <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
         <span>/</span>
         <Link href="/cart" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Cart</Link>

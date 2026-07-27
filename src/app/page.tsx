@@ -42,7 +42,7 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="hero" itemScope itemType="https://schema.org/WebPageElement" style={{ position: 'relative', overflow: 'hidden', minHeight: 'calc(100dvh - 90px)', display: 'flex', alignItems: 'center' }}>
+      <section className="hero" itemScope itemType="https://schema.org/WebPageElement" style={{ position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
         <div className="hero-bg" style={{ position: 'absolute', inset: 0 }}>
           <img src="/images/products/hero-spices.jpg" alt="Organic Pakistani spices on rustic wooden table — Aura Foods premium collection" fetchPriority="high" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,10,10,0.92), rgba(10,10,10,0.6), rgba(10,10,10,0.3))' }} />
@@ -86,12 +86,12 @@ export default async function HomePage() {
 
       {/* Shop by Category — Crafted Collections */}
       <section className="section" itemScope itemType="https://schema.org/ItemList">
-        <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+        <div className="section-header fade-up">
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Edit</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>The Aura Collection</h2>
           <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — each collection is a celebration of Pakistan's finest spice heritage.</p>
         </div>
-        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} itemProp="itemListElement">
+        <div className="grid-3" itemProp="itemListElement">
           {categories.map((cat: any) => (
             <Link key={cat.id} href={`/products?category=${cat.slug}`} className="category-card" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 8, overflow: 'hidden', display: 'block', textDecoration: 'none', color: 'var(--cream)' }} itemProp="significantLink">
               <img src={cat.image || '/images/products/placeholder.jpg'} alt={`${cat.name} — Buy organic ${cat.name} online in Pakistan`} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .6s' }} />
@@ -109,14 +109,14 @@ export default async function HomePage() {
       </section>
 
       {/* Best Sellers — Loved in Pakistani Kitchens */}
-      <section className="section-muted" style={{ padding: '5rem 1.5rem', background: 'rgba(74,103,65,0.05)' }} itemScope itemType="https://schema.org/ItemList">
+      <section className="section-muted" itemScope itemType="https://schema.org/ItemList">
         <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
-          <div className="section-header-left fade-up" style={{ textAlign: 'left', margin: '0 0 3.5rem' }}>
+          <div className="section-header-left fade-up">
             <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Distinguished Edit</div>
             <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>The Preferred Choice of Pakistan&apos;s Finest Kitchens</h2>
             <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The essentials our connoisseurs return to, time and again.</p>
           </div>
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }} itemProp="itemListElement">
+          <div className="grid-4" itemProp="itemListElement">
             {bestSellers.length > 0 ? bestSellers.map((product: any) => (
               <ProductCard
                 key={product.id}
@@ -144,12 +144,12 @@ export default async function HomePage() {
 
       {/* Why Aura Foods — A Promise You Can Taste */}
       <section className="section">
-        <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+        <div className="section-header fade-up">
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Aura Distinction</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>A Standard You Can Taste</h2>
           <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six pillars of uncompromising quality in every offering we present.</p>
         </div>
-        <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+        <div className="why-grid">
           {whyItems.map((item) => (
             <div key={item.title} className="why-card fade-up" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, padding: '1.5rem', textAlign: 'center', transition: 'all .3s' }}>
               <div className="why-icon" style={{ width: 48, height: 48, borderRadius: '50%', background: 'linear-gradient(135deg, var(--gold), #d4b85a)', display: 'grid', placeItems: 'center', margin: '0 auto 1rem' }}>
@@ -164,7 +164,7 @@ export default async function HomePage() {
 
       {/* Story Section — From Sindh Soil to Your Spice Rack */}
       <section className="story-section" style={{ padding: '5rem 1.5rem', background: 'var(--ink)', color: 'var(--cream)' }}>
-        <div className="story-container" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className="story-container" style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div className="story-image fade-up" style={{ position: 'relative', borderRadius: 8, overflow: 'hidden' }}>
             <div className="img-hover-switch" style={{ display: 'grid', width: '100%' }}>
               <img src="/images/products/story-en.jpg" alt="Traditional spice grinding in Sindh, Pakistan — Aura Foods heritage process" className="img-default" loading="lazy" style={{ gridArea: '1/1', width: '100%', transition: 'opacity .4s ease', objectFit: 'cover', aspectRatio: '4/5', position: 'relative', zIndex: 1 }} />
@@ -205,7 +205,7 @@ export default async function HomePage() {
 
       {/* Customer Love — Trusted Across Pakistan */}
       <section className="section">
-        <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+        <div className="section-header fade-up">
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Verdict</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Esteemed by Pakistan&apos;s Finest Homes</h2>
           <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Unsolicited acclaim from those who accept nothing less than exceptional.</p>
@@ -233,12 +233,12 @@ export default async function HomePage() {
 
       {/* Journal — Stories from the Kitchen */}
       <section className="section" itemScope itemType="https://schema.org/Blog">
-        <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+        <div className="section-header fade-up">
           <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Journal</div>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Culinary Chronicles</h2>
           <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Curated culinary narratives, heritage recipes, and field notes from Pakistan&apos;s spice heartland.</p>
         </div>
-        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+        <div className="grid-3">
           <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
             <div className="blog-card-img" style={{ height: 200, overflow: 'hidden' }}>
               <img src="/images/products/turmeric.jpg" alt="The Health Benefits of Daily Turmeric — Aura Foods blog" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
@@ -280,14 +280,14 @@ export default async function HomePage() {
 
       {/* Bundle Offers — Curated Combos, Better Value */}
       {bundles.length > 0 && (
-        <section className="section-muted" style={{ padding: '5rem 1.5rem', background: 'rgba(74,103,65,0.05)' }}>
+        <section className="section-muted">
           <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
-            <div className="section-header fade-up" style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 3.5rem' }}>
+            <div className="section-header fade-up">
               <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Bundle Offers</div>
               <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Ensembles, Privileged Pricing</h2>
               <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Elevate your kitchen&apos;s repertoire while enjoying exclusively preferential pricing.</p>
             </div>
-            <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+        <div className="grid-3">
               {bundles.map((bundle: any) => (
                 <Link key={bundle.id} href={`/bundles/${bundle.slug}`} className="bundle-card fade-up" style={{ background: 'var(--ink)', color: 'var(--cream)', borderRadius: 8, padding: '2rem', position: 'relative', overflow: 'hidden', display: 'block', textDecoration: 'none', transition: 'all .3s' }}>
                   {bundle.oldPrice > bundle.price && (
