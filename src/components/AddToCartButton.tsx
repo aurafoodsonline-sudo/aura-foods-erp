@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface AddToCartButtonProps {
   productId: number;
@@ -33,13 +33,23 @@ function saveCart(items: CartItem[]) {
 export default function AddToCartButton({ productId, productName, price, className }: AddToCartButtonProps) {
   const [feedback, setFeedback] = useState<'idle' | 'added'>('idle');
 
-  const getItemQuantity = useCallback((): number => {
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
     const cart = getCart();
     const item = cart.find((i) => i.productId === productId);
-    return item?.quantity || 0;
+    if (item) setQuantity(item.quantity);
   }, [productId]);
 
-  const [quantity, setQuantity] = useState(getItemQuantity);
+  useEffect(() => {
+    const handler = () => {
+      const cart = getCart();
+      const item = cart.find((i) => i.productId === productId);
+      setQuantity(item?.quantity || 0);
+    };
+    window.addEventListener('cartUpdated', handler);
+    return () => window.removeEventListener('cartUpdated', handler);
+  }, [productId]);
 
   const addToCart = () => {
     const cart = getCart();

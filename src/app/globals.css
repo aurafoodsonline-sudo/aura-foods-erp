@@ -634,15 +634,24 @@ section[id] {
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+@media (max-width: 640px) { .grid-auto { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; } }
+@media (max-width: 400px) { .grid-auto { grid-template-columns: 1fr !important; } }
+
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+@media (max-width: 768px) { .shop-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 1rem !important; } }
+@media (max-width: 480px) { .shop-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .75rem !important; } }
+
+.product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media (max-width: 768px) { .product-detail { grid-template-columns: 1fr; gap: 2rem; } }
+
 .shop-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; }
 @media (max-width: 768px) {
   .shop-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .shop-sidebar nav { flex-direction: row !important; flex-wrap: wrap; gap: .35rem !important; }
   .shop-sidebar h3 { margin-bottom: .75rem !important; }
   .shop-sidebar a { white-space: nowrap !important; font-size: .8125rem !important; padding: .35rem .65rem !important; }
-  .shop-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 1rem !important; }
 }
-@media (max-width: 480px) { .shop-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .75rem !important; } }
 
 /* --- Cart / Checkout --- */
 @media (max-width: 640px) {
