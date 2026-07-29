@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 interface AddToCartButtonProps {
   productId: number;
@@ -65,7 +65,6 @@ export default function AddToCartButton({ productId, productName, price, classNa
       }
 
       saveCart(cart);
-      setQuantity((q) => q + 1);
       setFeedback('added');
       setTimeout(() => setFeedback('idle'), 1500);
     } catch { /* guard */ }
@@ -82,7 +81,6 @@ export default function AddToCartButton({ productId, productName, price, classNa
         if (idx !== -1) cart.splice(idx, 1);
       }
       saveCart(cart);
-      setQuantity((q) => Math.max(0, q + delta));
       setFeedback(delta > 0 ? 'added' : 'idle');
       setTimeout(() => setFeedback('idle'), 1500);
     }
