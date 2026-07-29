@@ -30,7 +30,11 @@ body {
   color: var(--ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
+img, video, iframe, svg { max-width: 100%; height: auto; }
 
 :root {
   --nav-height: 72px;
@@ -578,15 +582,20 @@ section[id] {
 
 /* --- Mobile first: all sections --- */
 @media (max-width: 640px) {
-  .section { padding: 3rem 1.25rem !important; }
+  .section { padding: 2.5rem 1rem !important; }
   .section-header { margin-bottom: 1.5rem !important; }
   .section-header-left { margin-bottom: 1.5rem !important; }
-  .section-title { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
-  .section-subtitle { font-size: .875rem !important; }
-  .section-muted { padding: 3rem 1.25rem !important; }
-  .hero-content { padding: 4rem 1.25rem !important; }
-  .shop-header { padding: 6rem 1.25rem 2.5rem !important; }
-  .story-section { padding: 3rem 1.25rem !important; }
+  .section-title { font-size: clamp(1.35rem, 5vw, 1.75rem) !important; }
+  .section-subtitle { font-size: .8125rem !important; }
+  .section-muted { padding: 2.5rem 1rem !important; }
+  .hero-content { padding: 0 1rem !important; }
+  .shop-header { padding: 5rem 1rem 2rem !important; }
+  .story-section { padding: 2.5rem 1rem !important; }
+  .story-container { gap: 1.5rem !important; }
+  .story-content .section-eyebrow { font-size: .625rem !important; }
+  .story-title { font-size: clamp(1.35rem, 5vw, 1.75rem) !important; }
+  .story-text { font-size: .8125rem !important; }
+  .about-content { padding: 2.5rem 1rem !important; }
 }
 
 /* --- Tablet --- */
@@ -652,13 +661,14 @@ section[id] {
 
 /* --- Hero mobile --- */
 @media (max-width: 640px) {
-  .hero { min-height: calc(100dvh - var(--nav-height, 72px)) !important; }
-  .hero-badge { font-size: .5rem !important; letter-spacing: .2em !important; }
-  .hero-title { font-size: clamp(1.75rem, 7vw, 2.5rem) !important; }
-  .hero-subtitle { font-size: .875rem !important; max-width: 100% !important; }
-  .hero-actions { flex-direction: column !important; }
-  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100% !important; justify-content: center !important; }
-  .hero-features { gap: .75rem !important; font-size: .6875rem !important; }
+  .hero { min-height: auto !important; padding: 4rem 0 !important; }
+  .hero-badge { font-size: .5rem !important; letter-spacing: .15em !important; }
+  .hero-title { font-size: clamp(1.5rem, 7vw, 2.25rem) !important; }
+  .hero-subtitle { font-size: .8125rem !important; margin-top: 1rem !important; }
+  .hero-actions { flex-direction: column !important; margin-top: 1.5rem !important; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100% !important; justify-content: center !important; padding: .75rem 1.5rem !important; font-size: .8125rem !important; }
+  .hero-features { gap: .5rem !important; font-size: .625rem !important; margin-top: 1.5rem !important; }
+  .hero-text { max-width: 100% !important; }
 }
 
 /* --- Category card mobile --- */
