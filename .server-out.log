@@ -1,0 +1,11 @@
+▲ Next.js 16.2.11 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+- Environments: .env
+✓ Ready in 1407ms
+
+ GET /products/royal-garam-masala 200 in 4.4s (next.js: 1988ms, application-code: 2.5s)
+ GET / 200 in 1645ms (next.js: 92ms, application-code: 1552ms)
+ GET / 200 in 1116ms (next.js: 12ms, application-code: 1105ms)
+ GET /products/tangy-chaat-masala 200 in 1278ms (next.js: 37ms, application-code: 1242ms)
+ GET /products/royal-garam-masala 200 in 1566ms (next.js: 208ms, application-code: 1358ms)

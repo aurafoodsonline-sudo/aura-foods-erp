@@ -26,8 +26,10 @@ function getCart(): CartItem[] {
 }
 
 function saveCart(items: CartItem[]) {
-  localStorage.setItem('aura_cart', JSON.stringify(items));
-  window.dispatchEvent(new CustomEvent('cartUpdated'));
+  try {
+    localStorage.setItem('aura_cart', JSON.stringify(items));
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
+  } catch { /* localStorage may be unavailable (private browsing, etc.) */ }
 }
 
 export default function AddToCartButton({ productId, productName, price, className }: AddToCartButtonProps) {
@@ -52,19 +54,21 @@ export default function AddToCartButton({ productId, productName, price, classNa
   }, [productId]);
 
   const addToCart = () => {
-    const cart = getCart();
-    const existing = cart.find((i) => i.productId === productId);
+    try {
+      const cart = getCart();
+      const existing = cart.find((i) => i.productId === productId);
 
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ productId, quantity: 1, name: productName, price });
-    }
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ productId, quantity: 1, name: productName, price });
+      }
 
-    saveCart(cart);
-    setQuantity((q) => q + 1);
-    setFeedback('added');
-    setTimeout(() => setFeedback('idle'), 1500);
+      saveCart(cart);
+      setQuantity((q) => q + 1);
+      setFeedback('added');
+      setTimeout(() => setFeedback('idle'), 1500);
+    } catch { /* guard */ }
   };
 
   const updateQuantity = (delta: number) => {
