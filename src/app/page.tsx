@@ -210,7 +210,7 @@ export default async function HomePage() {
           <h2 className="section-title" >Esteemed by Pakistan&apos;s Finest Homes</h2>
           <p className="section-subtitle" >Unsolicited acclaim from those who accept nothing less than exceptional.</p>
         </div>
-        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+        <div className="grid-3">
           {testimonials.map((t) => (
             <div key={t.name} className="testimonial-card fade-up" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, padding: '1.75rem', transition: 'all .3s' }}>
               <div className="stars" style={{ display: 'flex', gap: '.125rem', color: 'var(--gold)', marginBottom: '1rem' }}>

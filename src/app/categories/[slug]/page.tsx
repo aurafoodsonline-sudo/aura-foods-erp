@@ -49,7 +49,7 @@ export default async function CategoryProductsPage({
             <p style={{ fontSize: '.875rem', color: 'var(--muted)', marginBottom: '1.5rem' }}>
               {products.length} product{products.length !== 1 ? 's' : ''} in this category
             </p>
-            <div className="shop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem' }}>
+            <div className="shop-grid">
               {products.map((product: any) => (
                 <ProductCard
                   key={product.id}

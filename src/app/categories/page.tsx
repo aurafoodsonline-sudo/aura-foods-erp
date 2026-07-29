@@ -16,7 +16,7 @@ export default async function CategoriesPage() {
 
       <section style={{ maxWidth: 1280, margin: '0 auto', padding: '3rem 1.5rem' }}>
         {categories.length > 0 ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.5rem' }}>
+          <div className="grid-auto">
             {categories.map((category: any) => (
               <CategoryCard
                 key={category.id}

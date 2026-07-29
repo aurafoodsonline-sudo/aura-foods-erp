@@ -75,7 +75,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       </div>
 
       {/* Product Detail */}
-      <div className="product-detail" style={{ padding: '3rem 1.5rem', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+      <div className="product-detail" style={{ padding: '3rem 1.5rem', maxWidth: 1280, margin: '0 auto' }}>
         <div className="product-gallery" style={{ borderRadius: 8, overflow: 'hidden' }}>
           {primaryImage ? (
             <img src={primaryImage.url} alt={primaryImage.alt || product.name} style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover' }} />
@@ -153,7 +153,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>You May Also Like</div>
             <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Related Products</h2>
           </div>
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+          <div className="grid-4">
             {relatedProducts.map((rp) => (
               <ProductCard
                 key={rp.id}

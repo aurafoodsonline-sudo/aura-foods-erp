@@ -40,7 +40,7 @@ export default async function BundleDetailPage({ params }: BundlePageProps) {
         <span className="current" style={{ color: 'var(--ink)', fontWeight: 600 }}>{bundle.name}</span>
       </div>
 
-      <div className="product-detail" style={{ padding: '3rem 1.5rem', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+      <div className="product-detail" style={{ padding: '3rem 1.5rem', maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ borderRadius: 8, overflow: 'hidden' }}>
           {bundle.image ? (
             <img src={bundle.image} alt={bundle.name} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover' }} />

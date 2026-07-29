@@ -98,7 +98,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           </div>
 
           {products.length > 0 ? (
-            <div className="shop-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem' }}>
+            <div className="shop-grid">
               {products.map((product: any) => (
                 <ProductCard
                   key={product.id}
