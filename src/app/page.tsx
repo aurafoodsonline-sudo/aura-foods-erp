@@ -87,9 +87,9 @@ export default async function HomePage() {
       {/* Shop by Category — Crafted Collections */}
       <section className="section" itemScope itemType="https://schema.org/ItemList">
         <div className="section-header fade-up">
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Edit</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>The Aura Collection</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>From everyday essentials to signature blends — each collection is a celebration of Pakistan's finest spice heritage.</p>
+          <div className="section-eyebrow">The Edit</div>
+          <h2 className="section-title" >The Aura Collection</h2>
+          <p className="section-subtitle" >From everyday essentials to signature blends — each collection is a celebration of Pakistan's finest spice heritage.</p>
         </div>
         <div className="grid-3" itemProp="itemListElement">
           {categories.map((cat: any) => (
@@ -112,9 +112,9 @@ export default async function HomePage() {
       <section className="section-muted" itemScope itemType="https://schema.org/ItemList">
         <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
           <div className="section-header-left fade-up">
-            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Distinguished Edit</div>
-            <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>The Preferred Choice of Pakistan&apos;s Finest Kitchens</h2>
-            <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>The essentials our connoisseurs return to, time and again.</p>
+            <div className="section-eyebrow">The Distinguished Edit</div>
+            <h2 className="section-title" >The Preferred Choice of Pakistan&apos;s Finest Kitchens</h2>
+            <p className="section-subtitle" >The essentials our connoisseurs return to, time and again.</p>
           </div>
           <div className="grid-4" itemProp="itemListElement">
             {bestSellers.length > 0 ? bestSellers.map((product: any) => (
@@ -145,9 +145,9 @@ export default async function HomePage() {
       {/* Why Aura Foods — A Promise You Can Taste */}
       <section className="section">
         <div className="section-header fade-up">
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Aura Distinction</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>A Standard You Can Taste</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Six pillars of uncompromising quality in every offering we present.</p>
+          <div className="section-eyebrow">The Aura Distinction</div>
+          <h2 className="section-title" >A Standard You Can Taste</h2>
+          <p className="section-subtitle" >Six pillars of uncompromising quality in every offering we present.</p>
         </div>
         <div className="why-grid">
           {whyItems.map((item) => (
@@ -176,7 +176,7 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="story-content fade-up">
-            <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>A Legacy of Quality</div>
+            <div className="section-eyebrow">A Legacy of Quality</div>
             <h2 className="story-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', lineHeight: 1.1, marginTop: '.75rem' }}>
               From the Soil of Sindh to <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>Your Kitchen</em>
             </h2>
@@ -206,9 +206,9 @@ export default async function HomePage() {
       {/* Customer Love — Trusted Across Pakistan */}
       <section className="section">
         <div className="section-header fade-up">
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>The Verdict</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Esteemed by Pakistan&apos;s Finest Homes</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Unsolicited acclaim from those who accept nothing less than exceptional.</p>
+          <div className="section-eyebrow">The Verdict</div>
+          <h2 className="section-title" >Esteemed by Pakistan&apos;s Finest Homes</h2>
+          <p className="section-subtitle" >Unsolicited acclaim from those who accept nothing less than exceptional.</p>
         </div>
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
           {testimonials.map((t) => (
@@ -234,9 +234,9 @@ export default async function HomePage() {
       {/* Journal — Stories from the Kitchen */}
       <section className="section" itemScope itemType="https://schema.org/Blog">
         <div className="section-header fade-up">
-          <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Journal</div>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Culinary Chronicles</h2>
-          <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Curated culinary narratives, heritage recipes, and field notes from Pakistan&apos;s spice heartland.</p>
+          <div className="section-eyebrow">Journal</div>
+          <h2 className="section-title" >Culinary Chronicles</h2>
+          <p className="section-subtitle" >Curated culinary narratives, heritage recipes, and field notes from Pakistan&apos;s spice heartland.</p>
         </div>
         <div className="grid-3">
           <div className="blog-card fade-up" style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--card)', textDecoration: 'none', color: 'inherit', display: 'block' }}>
@@ -283,9 +283,9 @@ export default async function HomePage() {
         <section className="section-muted">
           <div className="section" style={{ padding: 0, maxWidth: 1280, margin: '0 auto' }}>
             <div className="section-header fade-up">
-              <div className="section-eyebrow" style={{ fontSize: '.6875rem', textTransform: 'uppercase', letterSpacing: '.3em', color: 'var(--gold)' }}>Bundle Offers</div>
-              <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.1, marginTop: '.75rem' }}>Curated Ensembles, Privileged Pricing</h2>
-              <p className="section-subtitle" style={{ color: 'var(--muted)', marginTop: '1rem', fontSize: '.9375rem' }}>Elevate your kitchen&apos;s repertoire while enjoying exclusively preferential pricing.</p>
+              <div className="section-eyebrow">Bundle Offers</div>
+              <h2 className="section-title" >Curated Ensembles, Privileged Pricing</h2>
+              <p className="section-subtitle" >Elevate your kitchen&apos;s repertoire while enjoying exclusively preferential pricing.</p>
             </div>
         <div className="grid-3">
               {bundles.map((bundle: any) => (
