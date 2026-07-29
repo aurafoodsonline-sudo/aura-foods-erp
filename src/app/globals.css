@@ -34,9 +34,63 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,0.02) 40px, rgba(201,168,76,0.02) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,0.02) 40px, rgba(201,168,76,0.02) 41px);
 }
 *, *::before, *::after { box-sizing: border-box; }
 img, video, iframe, svg { max-width: 100%; height: auto; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark, #B8960F); }
+
+/* Subtle gold divider between sections */
+.section::before, .section-muted::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 2rem;
+}
+.section-header + .section::before, .section-muted .section::before { display: none; }
+
+/* Card hover refinement */
+.product-card, .bundle-card, .testimonial-card, .blog-card, .why-card, .category-card {
+  transition: all .4s cubic-bezier(.25,.46,.45,.94) !important;
+}
+.product-card:hover, .bundle-card:hover, .testimonial-card:hover {
+  box-shadow: 0 12px 48px rgba(10,10,10,0.12) !important;
+}
+
+/* Image reveal: subtle zoom on any card image */
+.card-img, .blog-card-img img, .bundle-card img {
+  transition: transform .7s cubic-bezier(.25,.46,.45,.94) !important;
+}
+.product-card:hover .card-img,
+.blog-card:hover .blog-card-img img,
+.bundle-card:hover > img {
+  transform: scale(1.06);
+}
+
+/* Gold underline for headings */
+.section-title::after, .story-title::after, .shop-header h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: .75rem;
+}
+.section-header .section-title::after, .shop-header h1::after { margin-left: auto; margin-right: auto; }
+.section-header-left .section-title::after { margin-left: 0; }
+
+/* Remove gold divider for section-header that already has the after element */
+.section-header .section-title::after, .shop-header h1::after { margin: .75rem auto 0; }
+.story-title::after { margin-top: .5rem; }
 
 :root {
   --nav-height: 72px;
@@ -580,6 +634,46 @@ section[id] {
   min-height: calc(100dvh - var(--nav-height, 90px));
 }
 
+/* About page hero */
+.about-hero {
+  padding: 8rem 1.5rem 4rem;
+  background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.85));
+  color: var(--cream);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .about-hero { padding: 5rem 1rem 2.5rem !important; }
+  .about-hero h1 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .about-hero p { font-size: .875rem !important; }
+  .about-content { padding: 2rem 1rem !important; }
+  .about-text h2 { font-size: clamp(1.35rem, 5vw, 1.75rem) !important; }
+  .about-text p { font-size: .875rem !important; }
+  .stats-grid { margin-top: 2rem !important; gap: 1.5rem !important; }
+  .stat-number { font-size: 2rem !important; }
+  .about-values-grid { gap: .75rem !important; }
+}
+
+/* Contact page mobile */
+@media (max-width: 640px) {
+  .contact-page { padding: 6rem 1rem 2rem !important; }
+  .contact-form { padding: 1.25rem !important; }
+  .contact-detail { gap: .75rem !important; }
+  .contact-detail-icon { width: 36px !important; height: 36px !important; font-size: .65rem !important; }
+  .contact-detail-value { font-size: .875rem !important; }
+}
+
+/* Bundles page */
+.bundle-header {
+  padding: 8rem 1.5rem 3rem;
+  background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.9));
+  color: var(--cream);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .bundle-header { padding: 5rem 1rem 2rem !important; }
+  .bundle-header h1 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+}
+
 /* ===== FULL RESPONSIVE OVERRIDES ===== */
 
 /* --- Mobile first: all sections --- */
@@ -699,4 +793,92 @@ section[id] {
 
 /* --- Product info padding on mobile --- */
 @media (max-width: 480px) { .product-info { padding: .75rem !important; } .product-name { font-size: .875rem !important; } }
+
+/* --- Add to cart button mobile --- */
+@media (max-width: 480px) {
+  .btn-add-cart { font-size: .75rem !important; padding: .55rem !important; }
+  .product-actions { flex-direction: column !important; }
+  .product-actions .btn-primary, .product-actions .btn-secondary { width: 100% !important; justify-content: center !important; }
+}
+
+/* --- Navbar mobile refinements --- */
+@media (max-width: 640px) {
+  .nav-container { padding: 0 .75rem !important; }
+  .cart-link { padding: .5rem .25rem !important; }
+}
+
+/* --- Checkout/Order pages mobile --- */
+@media (max-width: 640px) {
+  .order-confirm { padding-top: 6rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+  .order-detail { font-size: .875rem !important; }
+}
+
+/* --- Admin pages mobile --- */
+@media (max-width: 640px) {
+  .admin-layout { padding: 1rem !important; }
+  .admin-header { flex-direction: column !important; gap: .75rem !important; }
+  .admin-table { font-size: .75rem !important; }
+  .admin-table th, .admin-table td { padding: .5rem !important; }
+}
+
+/* --- Smooth anchor scroll --- */
+html { scroll-behavior: smooth; }
+
+/* --- Focus visible ring --- */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Selection color --- */
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* --- Navbar backdrop non-interactive area fix --- */
+.navbar { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+/* --- Hero overlay gradient enhancement --- */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.2) 100%) !important;
+}
+@media (max-width: 640px) {
+  .hero-overlay {
+    background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.3) 80%, rgba(10,10,10,0.1) 100%) !important;
+  }
+}
+
+/* --- Category card radius variation --- */
+.category-card:nth-child(odd) { border-radius: 1rem 8px 1rem 8px !important; }
+.category-card:nth-child(even) { border-radius: 8px 1rem 8px 1rem !important; }
+@media (max-width: 480px) {
+  .category-card:nth-child(odd),
+  .category-card:nth-child(even) { border-radius: 8px !important; }
+}
+
+/* --- Testimonial card border accent --- */
+.testimonial-card {
+  border-left: 3px solid var(--gold) !important;
+}
+
+/* --- Blog card border bottom accent --- */
+.blog-card {
+  border-bottom: 3px solid transparent !important;
+}
+.blog-card:hover {
+  border-bottom-color: var(--gold) !important;
+}
+
+/* --- Bundle card hover border --- */
+.bundle-card:hover {
+  border-color: var(--gold) !important;
+}
+
+/* --- Why card icon hover pulse --- */
+.why-card:hover .why-icon {
+  transform: scale(1.1);
+  transition: transform .3s ease;
+}
 
