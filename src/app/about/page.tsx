@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* About Hero */}
-      <section className="about-hero" style={{ padding: '8rem 1.5rem 4rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.85))', color: 'var(--cream)', textAlign: 'center' }}>
+      <section className="about-hero" style={{ padding: '8rem 1.5rem 4rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(10,10,10,0.7))', color: 'var(--cream)', textAlign: 'center' }}>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Our Story — Aura Foods Organic Spices</h1>
         <p style={{ opacity: .7, marginTop: '.75rem', maxWidth: 600, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.7 }}>
           From the sun-drenched fields of Sindh to your kitchen — Aura Foods is on a mission to bring back the authentic taste of Pakistani spices.
@@ -77,3 +77,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

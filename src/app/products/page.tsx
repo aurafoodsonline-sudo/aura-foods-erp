@@ -39,7 +39,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   return (
     <div>
       {/* Shop Header */}
-      <section className="shop-header" style={{ padding: '8rem 1.5rem 3rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(74,103,65,0.9))', color: 'var(--cream)', textAlign: 'center' }}>
+      <section className="shop-header" style={{ padding: '8rem 1.5rem 3rem', background: 'linear-gradient(135deg, rgba(10,10,10,0.95), rgba(10,10,10,0.7))', color: 'var(--cream)', textAlign: 'center' }}>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
           {categorySlug ? `${activeCategory?.name || categorySlug} Spices — Buy Online in Pakistan` : 'Organic Spice Collection — Buy Online in Pakistan'}
         </h1>
